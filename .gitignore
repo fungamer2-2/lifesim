@@ -1,0 +1,14 @@
+# IDE
+.vscode
+
+# Binaries & Applications
+bin
+lifesim.app
+main
+a.out
+*.o
+
+# Platform-specific Files
+**/.DS_Store
+**/Thumbs.db
+**/._*
