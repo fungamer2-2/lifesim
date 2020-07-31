@@ -76,10 +76,10 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 				(*bools).push_back(false);
 				awaitingValue = false;
 			}
-			if (iterations > pos) {
+		}
+		if (iterations > pos) {
 				break;
 			}
-		}
 	}
 	for (int i = 0; i < tempNums.size(); i++) {
 		int nNum;

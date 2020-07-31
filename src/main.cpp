@@ -1,7 +1,10 @@
 #include <iostream>
+#include <generateStat.h>
 #include <createVehicle.h>
+#include <createPerson.h>
 
 int main() {
-	Vehicle test = createVehicle();
+	srand(time(NULL));
+	
 	return 0;
 }

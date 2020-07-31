@@ -7,6 +7,5 @@ Vehicle createVehicle() {
 	std::vector<int> nums;
 	std::vector<bool> bools;
 	readJSON("./data/vehicles.json", 1, &strs, &nums, &bools);
-	Vehicle v(strs[0], rand() % (nums[1] - nums[0]) + nums[0], nums[2], bools[0]);
-	return v;
+	return Vehicle(strs[0], rand() % (nums[1] - nums[0]) + nums[0], nums[2], bools[0]);
 }
