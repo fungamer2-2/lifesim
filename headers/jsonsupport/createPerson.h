@@ -3,6 +3,6 @@
 
 #include <person.h>
 
-Person createPerson();
+Person createPerson(short int age, int balance, bool sex = rand() % 2);
 
 #endif

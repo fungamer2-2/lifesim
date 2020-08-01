@@ -1,6 +1,6 @@
 #include <person.h>
 
-Person::Person(int nBalance, short int nAge, short int nIntelligence, short int nCharisma, short int nHappiness, short int nHealth, bool nSex, char *nFirstName, char *nLastName) {
+Person::Person(int nBalance, short int nAge, const char *nFirstName, const char *nLastName, bool nSex, short int nIntelligence, short int nCharisma, short int nHappiness, short int nHealth) {
 	this->balance = nBalance;
 	this->age = nAge;
 	this->intelligence = nIntelligence;

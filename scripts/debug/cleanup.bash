@@ -2,3 +2,4 @@
 
 rm a.out
 rm *.o
+rm main
