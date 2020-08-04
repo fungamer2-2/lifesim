@@ -11,3 +11,63 @@ Person::Person(int nBalance, short int nAge, const char *nFirstName, const char 
 	this->firstName = nFirstName;
 	this->lastName = nLastName;
 }
+
+const char * Person::getFirstName() {
+	return this->firstName;
+}
+
+const char * Person::getLastName() {
+	return this->lastName;
+}
+
+int Person::getBalance() {
+	return this->balance;
+}
+
+void Person::updateBalane(int gains) {
+	this->balance += gains;
+}
+
+short int Person::getAge() {
+	return this->age;
+}
+
+void Person::ageAYear() {
+	this->age++;
+}
+
+short int Person::getIntelligence() {
+	return this->intelligence;
+}
+
+void Person::updateIntelligence(short int offset) {
+	this->intelligence += offset;
+}
+
+short int Person::getCharisma() {
+	return this->charisma;
+}
+
+void Person::updateCharisma(short int offset) {
+	this->charisma += offset;
+}
+
+short int Person::getHappiness() {
+	return this->happiness;
+}
+
+void Person::updateHappiness(short int offset) {
+	this->happiness += offset;
+}
+
+short int Person::getHealth() {
+	return this->health;
+}
+
+void Person::updateHealth(short int offset) {
+	this->health += offset;
+}
+
+bool Person::getSex() {
+	return this->sex;
+}

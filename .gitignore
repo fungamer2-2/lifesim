@@ -12,3 +12,8 @@ a.out
 **/.DS_Store
 **/Thumbs.db
 **/._*
+
+# Temps and caches
+.mypy_cache
+.pytest_cache
+**/TempCodeRunnerFile.bash
