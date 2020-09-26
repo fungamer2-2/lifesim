@@ -3,6 +3,7 @@
 
 #include <random>
 #include <generateStat.h>
+#include <string>
 
 class Person {
 	public:
@@ -30,8 +31,8 @@ class Person {
 		short int happiness;
 		short int health;
 		bool sex;
-		const char *firstName;
-		const char *lastName;
+		std::string firstName;
+		std::string lastName;
 };
 
 #endif

@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-void readJSON(const char * path, short int pos, std::vector<const char *> *strs, std::vector<int> *nums, std::vector<bool> *bools) {
+void readJSON(const char * path, short int pos, std::vector<std::string> *strs, std::vector<int> *nums, std::vector<bool> *bools) {
 	std::ifstream in(path);
 
 	bool name = false;
@@ -55,7 +55,7 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 				std::string temp(line.begin() + i + 1, line.end());
 				for (int j = 0; j < (int)temp.size(); j++) {
 					if (temp[j] == '"') {
-						(*strs).push_back(temp.substr(0, j).c_str());
+						(*strs).push_back(temp.substr(0, j));
 						break;
 					}
 				}

@@ -13,11 +13,11 @@ Person::Person(int nBalance, short int nAge, const char *nFirstName, const char 
 }
 
 const char * Person::getFirstName() {
-	return this->firstName;
+	return this->firstName.c_str();
 }
 
 const char * Person::getLastName() {
-	return this->lastName;
+	return this->lastName.c_str();
 }
 
 int Person::getBalance() {

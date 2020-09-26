@@ -4,9 +4,9 @@
 #include <stdlib.h>
 
 Vehicle createVehicle() {
-	std::vector<const char *> strs;
+	std::vector<std::string> strs;
 	std::vector<int> nums;
 	std::vector<bool> bools;
 	readJSON("./data/jsons/vehicles.json", 1, &strs, &nums, &bools);
-	return Vehicle(strs[0], rand() % (nums[1] - nums[0]) + nums[0], nums[2], bools[0]);
+	return Vehicle(strs[0].c_str(), rand() % (nums[1] - nums[0]) + nums[0], nums[2], bools[0]);
 }
