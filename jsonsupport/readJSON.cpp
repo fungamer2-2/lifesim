@@ -15,7 +15,7 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 
 	while (std::getline(in, line)) {
 
-		for (int i = 0; i < line.size(); i++) {
+		for (int i = 0; i < (int)line.size(); i++) {
 			char c = line[i];
 			if (iterations != pos) {
 				if (c == '}') {
@@ -53,7 +53,7 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 			}
 			if (c == '"' and awaitingValue) {
 				std::string temp(line.begin() + i + 1, line.end());
-				for (int j = 0; j < temp.size(); j++) {
+				for (int j = 0; j < (int)temp.size(); j++) {
 					if (temp[j] == '"') {
 						(*strs).push_back(temp.substr(0, j).c_str());
 						break;
@@ -62,7 +62,7 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 				awaitingValue = false;
 			} else if ((c == '0' or c == '1' or c == '2' or c == '3' or c == '4' or c == '5' or c == '6' or c == '7' or c == '8' or c == '9') and awaitingValue) {
 				std::string temp(line.begin() + i, line.end());
-				for (int j = 0; j < temp.size(); j++) {
+				for (int j = 0; j < (int)temp.size(); j++) {
 					if (temp[j] != '0' and temp[j] != '1' and temp[j] != '2' and temp[j] != '3' and temp[j] != '4' and temp[j] != '5' and temp[j] != '6' and temp[j] != '7' and temp[j] != '8' and temp[j] != '9') {
 						tempNums.push_back(temp.substr(0, j));
 						break;
@@ -81,7 +81,7 @@ void readJSON(const char * path, short int pos, std::vector<const char *> *strs,
 				break;
 			}
 	}
-	for (int i = 0; i < tempNums.size(); i++) {
+	for (int i = 0; i < (int)tempNums.size(); i++) {
 		int nNum;
 		std::istringstream(tempNums[i]) >> nNum;
 		(*nums).push_back(nNum);

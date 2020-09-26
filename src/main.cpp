@@ -2,6 +2,8 @@
 #include <generateStat.h>
 #include <createVehicle.h>
 #include <createPerson.h>
+#include <time.h>
+#include <stdlib.h>
 
 int main() {
 	srand(time(NULL));

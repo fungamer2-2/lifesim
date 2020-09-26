@@ -1,6 +1,7 @@
 #include <createVehicle.h>
 #include <readJSON.h>
 #include <vector>
+#include <stdlib.h>
 
 Vehicle createVehicle() {
 	std::vector<const char *> strs;

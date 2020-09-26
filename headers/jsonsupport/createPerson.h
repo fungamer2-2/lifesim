@@ -2,6 +2,7 @@
 #define CREATEPERSON_H
 
 #include <person.h>
+#include <stdlib.h>
 
 Person createPerson(short int age, int balance, bool sex = rand() % 2);
 
