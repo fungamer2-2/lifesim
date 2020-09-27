@@ -15,4 +15,4 @@ class Vehicle {
 		bool isNew;
 };
 
-#endif
+#endif // ifndef VEHICLE_H

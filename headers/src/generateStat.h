@@ -3,4 +3,4 @@
 
 short int generateStat(float multiplier = 1);
 
-#endif
+#endif // ifndef GENERATESTAT_H

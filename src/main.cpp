@@ -1,21 +1,19 @@
 #include <iostream>
-#include <generateStat.h>
-#include <createVehicle.h>
-#include <createPerson.h>
+#include <mainCharacter.h>
 #include <time.h>
 #include <stdlib.h>
 
 int main() {
 	srand(time(NULL));
-	
-	Person player = createPerson(0, 0);
-	std::cout << std::endl << player.getFirstName() << std::endl;
-	std::cout << std::endl << player.getLastName() << std::endl;
-	std::cout << std::endl << player.getSex() << std::endl;
-	std::cout << std::endl << player.getIntelligence() << std::endl;
-	std::cout << std::endl << player.getHappiness() << std::endl;
-	std::cout << std::endl << player.getCharisma() << std::endl;
-	std::cout << std::endl << player.getHealth() << std::endl;
+	mainCharacter player;
+	std::cout << player.getFirstName() << std::endl;
+	std::cout << player.getLastName() << std::endl;
+	std::cout << player.getSex() << std::endl;
+	std::cout << player.getIntelligence() << std::endl;
+	std::cout << player.getCharisma() << std::endl;
+	std::cout << player.getHappiness() << std::endl;
+	std::cout << player.getHealth() << std::endl;
+	std::cout << player.getAge() << std::endl;
 
 	return 0;
 }

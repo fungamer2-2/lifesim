@@ -1,15 +1,23 @@
 #include <person.h>
+#include <readJSON.h>
 
-Person::Person(int nBalance, short int nAge, const char *nFirstName, const char *nLastName, bool nSex, short int nIntelligence, short int nCharisma, short int nHappiness, short int nHealth) {
+Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma) {
 	this->balance = nBalance;
 	this->age = nAge;
 	this->intelligence = nIntelligence;
 	this->charisma = nCharisma;
-	this->happiness = nHappiness;
-	this->health = nHealth;
 	this->sex = nSex;
-	this->firstName = nFirstName;
-	this->lastName = nLastName;
+	std::vector<std::string> strs;
+	std::vector<int> nums;
+	std::vector<bool> bools;
+	if (this->sex) {
+		readJSON("./data/jsons/person.json", rand() % 50, &strs, &nums, &bools);
+	} else {
+		readJSON("./data/jsons/person.json", rand() % 50 + 50, &strs, &nums, &bools);
+	}
+	readJSON("./data/jsons/person.json", rand() % 100 + 100, &strs, &nums, &bools);
+	this->firstName = strs[0];
+	this->lastName = strs[1];
 }
 
 const char * Person::getFirstName() {
@@ -50,22 +58,6 @@ short int Person::getCharisma() {
 
 void Person::updateCharisma(short int offset) {
 	this->charisma += offset;
-}
-
-short int Person::getHappiness() {
-	return this->happiness;
-}
-
-void Person::updateHappiness(short int offset) {
-	this->happiness += offset;
-}
-
-short int Person::getHealth() {
-	return this->health;
-}
-
-void Person::updateHealth(short int offset) {
-	this->health += offset;
 }
 
 bool Person::getSex() {

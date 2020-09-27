@@ -6,4 +6,4 @@
 
 void readJSON(const char * path, short int pos, std::vector<std::string> *strs, std::vector<int> *nums, std::vector<bool> *bools);
 
-#endif
+#endif // ifndef READJSON_H

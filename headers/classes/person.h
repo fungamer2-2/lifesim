@@ -7,7 +7,7 @@
 
 class Person {
 	public:
-		Person(int nBalance, short int nAge, const char *nFirstName, const char *nLastName, bool nSex = rand() % 2, short int nIntelligence = generateStat(), short int nCharisma = generateStat(), short int nHappiness = generateStat(), short int nHealth = generateStat());
+		Person(bool nSex = rand() % 2, short int nAge = 0, int nBalance = 0, short int nIntelligence = generateStat(), short int nCharisma = generateStat());
 		const char * getFirstName();
 		const char * getLastName();
 		int getBalance();
@@ -18,21 +18,15 @@ class Person {
 		void updateIntelligence(short int offset);
 		short int getCharisma();
 		void updateCharisma(short int offset);
-		short int getHappiness();
-		void updateHappiness(short int offset);
-		short int getHealth();
-		void updateHealth(short int offset);
 		bool getSex();
-	private:
+	protected:
 		int balance;
 		short int age;
 		short int intelligence;
 		short int charisma;
-		short int happiness;
-		short int health;
 		bool sex;
 		std::string firstName;
 		std::string lastName;
 };
 
-#endif
+#endif // ifndef PERSON_H
