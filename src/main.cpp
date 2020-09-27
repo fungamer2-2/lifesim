@@ -14,7 +14,6 @@ int main() {
 	std::cout << player.getSex() << std::endl;
 	std::cout << player.getIntelligence() << std::endl;
 	std::cout << player.getCharisma() << std::endl;
-	std::cout << player.getHappiness() << std::endl;
 	std::cout << player.getHealth() << std::endl;
 	std::cout << player.getAge() << std::endl;
 

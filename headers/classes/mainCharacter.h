@@ -6,12 +6,9 @@
 class mainCharacter : public Person {
     public:
         mainCharacter(Parent *first, Parent *second);
-        short int getHappiness();
-        void updateHappiness(short int offset);
         short int getHealth();
-        void updateHealth(short int offset);
+        short int updateHealth(short int offset);
     private:
-        short int happiness;
         short int health;
 };
 

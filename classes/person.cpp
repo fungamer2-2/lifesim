@@ -1,12 +1,13 @@
 #include <person.h>
 #include <readJSON.h>
 
-Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma) {
+Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {
 	this->balance = nBalance;
 	this->age = nAge;
 	this->intelligence = nIntelligence;
 	this->charisma = nCharisma;
 	this->sex = nSex;
+	this->relation = nRelation;
 	std::vector<std::string> strs;
 	std::vector<int> nums;
 	std::vector<bool> bools;
@@ -32,32 +33,45 @@ int Person::getBalance() {
 	return this->balance;
 }
 
-void Person::updateBalane(int gains) {
+int Person::updateBalane(int gains) {
 	this->balance += gains;
+	return this->balance;
 }
 
 short int Person::getAge() {
 	return this->age;
 }
 
-void Person::ageAYear() {
+short int Person::ageAYear() {
 	this->age++;
+	return this->age;
 }
 
 short int Person::getIntelligence() {
 	return this->intelligence;
 }
 
-void Person::updateIntelligence(short int offset) {
+short int Person::updateIntelligence(short int offset) {
 	this->intelligence += offset;
+	return this->intelligence;
 }
 
 short int Person::getCharisma() {
 	return this->charisma;
 }
 
-void Person::updateCharisma(short int offset) {
+short int Person::updateCharisma(short int offset) {
 	this->charisma += offset;
+	return this->charisma;
+}
+
+short int Person::getRelation() {
+	return this->relation;
+}
+
+short int Person::updateRelation(short int offset) {
+	this->relation += offset;
+	return this->relation;
 }
 
 bool Person::getSex() {
