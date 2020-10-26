@@ -1,6 +1,6 @@
 #include <mainCharacter.h>
 
-mainCharacter::mainCharacter(Parent *first, Parent *second) {
+lsim::mainCharacter::mainCharacter(Parent *first, Parent *second) {
     this->health = generateStat();
     if (rand() % 2 == 1) {
         this->lastName = (*first).getLastName();
@@ -13,11 +13,11 @@ mainCharacter::mainCharacter(Parent *first, Parent *second) {
     this->charisma = ((*first).getCharisma() * firstParentWeight / 100) + ((*second).getCharisma() * (100 - firstParentWeight) / 100);
 }
 
-short int mainCharacter::getHealth() {
+short int lsim::mainCharacter::getHealth() {
     return this->health;
 }
 
-short int mainCharacter::updateHealth(short int offset) {
+short int lsim::mainCharacter::updateHealth(short int offset) {
     this->health += offset;
     return this->health;
 }

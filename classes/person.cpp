@@ -1,7 +1,7 @@
 #include <person.h>
 #include <readJSON.h>
 
-Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {
+lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {
 	this->balance = nBalance;
 	this->age = nAge;
 	this->intelligence = nIntelligence;
@@ -21,59 +21,59 @@ Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence,
 	this->lastName = strs[1];
 }
 
-const char * Person::getFirstName() {
+const char * lsim::Person::getFirstName() {
 	return this->firstName.c_str();
 }
 
-const char * Person::getLastName() {
+const char * lsim::Person::getLastName() {
 	return this->lastName.c_str();
 }
 
-int Person::getBalance() {
+int lsim::Person::getBalance() {
 	return this->balance;
 }
 
-int Person::updateBalane(int gains) {
+int lsim::Person::updateBalane(int gains) {
 	this->balance += gains;
 	return this->balance;
 }
 
-short int Person::getAge() {
+short int lsim::Person::getAge() {
 	return this->age;
 }
 
-short int Person::ageAYear() {
+short int lsim::Person::ageAYear() {
 	this->age++;
 	return this->age;
 }
 
-short int Person::getIntelligence() {
+short int lsim::Person::getIntelligence() {
 	return this->intelligence;
 }
 
-short int Person::updateIntelligence(short int offset) {
+short int lsim::Person::updateIntelligence(short int offset) {
 	this->intelligence += offset;
 	return this->intelligence;
 }
 
-short int Person::getCharisma() {
+short int lsim::Person::getCharisma() {
 	return this->charisma;
 }
 
-short int Person::updateCharisma(short int offset) {
+short int lsim::Person::updateCharisma(short int offset) {
 	this->charisma += offset;
 	return this->charisma;
 }
 
-short int Person::getRelation() {
+short int lsim::Person::getRelation() {
 	return this->relation;
 }
 
-short int Person::updateRelation(short int offset) {
+short int lsim::Person::updateRelation(short int offset) {
 	this->relation += offset;
 	return this->relation;
 }
 
-bool Person::getSex() {
+bool lsim::Person::getSex() {
 	return this->sex;
 }

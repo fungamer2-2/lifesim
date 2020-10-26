@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-void readJSON(const char * path, short int pos, std::vector<std::string> *strs, std::vector<int> *nums, std::vector<bool> *bools) {
+void lsim::readJSON(const char * path, short int pos, std::vector<std::string> *strs, std::vector<int> *nums, std::vector<bool> *bools) {
 	std::ifstream in(path);
 
 	bool name = false;

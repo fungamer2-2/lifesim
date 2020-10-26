@@ -3,10 +3,12 @@
 
 #include <person.h>
 
-class Parent : public Person {
-    public:
-        Parent(bool nSex);
-    private:
-};
+namespace lsim {
+    class Parent : public Person {
+        public:
+            Parent(bool nSex);
+        private:
+    }; // class Parent
+} // namespace lsim
 
 #endif // ifndef PARENT_H
