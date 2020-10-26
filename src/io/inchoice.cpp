@@ -1,3 +1,6 @@
+#include <iostream>
+#include <limits>
+
 #include "../../headers/io/inchoice.h"
 
 short int lsim::io::inchoice(std::vector<const char *> choices) {
@@ -8,7 +11,8 @@ short int lsim::io::inchoice(std::vector<const char *> choices) {
 	do {
 		std::cout << "Enter a number 1-" << choices.size() << " : ";
 		std::cin >> result;
-		std::cin.ignore(0x7FFF, '\n');
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.clear();
 	} while (std::cin.fail() or result < 0 or result > choices.size());
 	return result;
 }

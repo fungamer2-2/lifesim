@@ -2,7 +2,6 @@
 #define INCHOICE_H
 
 #include <vector>
-#include <iostream>
 
 namespace lsim {
 	namespace io {
