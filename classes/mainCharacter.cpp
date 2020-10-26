@@ -1,4 +1,4 @@
-#include <mainCharacter.h>
+#include "../headers/classes/mainCharacter.h"
 
 lsim::mainCharacter::mainCharacter(Parent *first, Parent *second) {
     this->health = generateStat();
