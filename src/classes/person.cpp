@@ -1,5 +1,5 @@
-#include "../headers/classes/person.h"
-#include "../headers/jsonsupport/readJSON.h"
+#include "../../headers/classes/person.h"
+#include "../../headers/jsonsupport/readJSON.h"
 
 lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {
 	this->balance = nBalance;

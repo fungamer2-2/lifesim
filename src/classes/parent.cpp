@@ -1,4 +1,4 @@
-#include "../headers/classes/parent.h"
+#include "../../headers/classes/parent.h"
 
 lsim::Parent::Parent(bool nSex) : Person(nSex) {
 	if (this->relation < 20) {
