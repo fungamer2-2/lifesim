@@ -4,7 +4,7 @@
 #include <random>
 #include <string>
 
-#include "../src/generateStat.h"
+#include "../generateStat.h"
 
 namespace lsim {
 	class Person {

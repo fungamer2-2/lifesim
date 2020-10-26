@@ -1,7 +1,6 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
-
 #include "../headers/classes/mainCharacter.h"
 
 int main() {
