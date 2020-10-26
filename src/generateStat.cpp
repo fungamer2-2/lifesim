@@ -1,5 +1,6 @@
-#include <generateStat.h>
 #include <random>
+
+#include "../headers/src/generateStat.h"
 
 short int lsim::generateStat(float multiplier, short int bonus) {
 	// returns average of two random numbers to achieve a distribution somewhat centralized around 50-60

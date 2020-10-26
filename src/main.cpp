@@ -1,8 +1,8 @@
 #include <iostream>
-#include <mainCharacter.h>
-#include <parent.h>
 #include <time.h>
 #include <stdlib.h>
+
+#include "../headers/classes/mainCharacter.h"
 
 int main() {
 	srand(time(NULL));

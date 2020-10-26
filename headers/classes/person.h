@@ -2,8 +2,9 @@
 #define PERSON_H
 
 #include <random>
-#include <generateStat.h>
 #include <string>
+
+#include "../src/generateStat.h"
 
 namespace lsim {
 	class Person {

@@ -1,11 +1,10 @@
 #ifndef MAINCHARACTER_H
 #define MAINCHARACTER_H
 
-#include <person.h>
-#include <parent.h>
+#include "parent.h"
 
 namespace lsim {
-    class mainCharacter : public Person {
+    class mainCharacter : public lsim::Person {
         public:
             mainCharacter(Parent *first, Parent *second);
             short int getHealth();

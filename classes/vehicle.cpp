@@ -1,4 +1,4 @@
-#include <vehicle.h>
+#include "../headers/classes/vehicle.h"
 
 lsim::Vehicle::Vehicle(const char *nName, int nAge, int nCost, bool nIsNew) {
 	this->name = nName;

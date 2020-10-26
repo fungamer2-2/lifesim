@@ -1,10 +1,10 @@
 #ifndef PARENT_H
 #define PARENT_H
 
-#include <person.h>
+#include "./person.h"
 
 namespace lsim {
-    class Parent : public Person {
+    class Parent : public lsim::Person {
         public:
             Parent(bool nSex);
         private:
