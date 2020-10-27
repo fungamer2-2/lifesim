@@ -9,10 +9,12 @@ short int lsim::io::inchoice(std::vector<const char *> choices) {
 	}
 	short int result;
 	do {
+		if (std::cin.fail()) {
+			std::cin.clear();
+		}
 		std::cout << "Enter a number 1-" << choices.size() << " : ";
 		std::cin >> result;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cin.clear();
 	} while (std::cin.fail() or result < 0 or result > choices.size());
 	return result;
 }

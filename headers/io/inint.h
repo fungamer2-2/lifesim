@@ -3,8 +3,7 @@
 
 namespace lsim {
 	namespace io {
-		template <class T>
-		T inint(const char * message);
+		int inint(const char * message);
 	} // namespace io
 } // namespace lsim
 

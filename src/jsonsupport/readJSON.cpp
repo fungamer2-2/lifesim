@@ -2,7 +2,7 @@
 #include <sstream>
 #include <string>
 
-#include "../headers/jsonsupport/readJSON.h"
+#include "../../headers/jsonsupport/readJSON.h"
 
 void lsim::readJSON(const char * path, short int pos, std::vector<std::string> *strs, std::vector<int> *nums, std::vector<bool> *bools) {
 	std::ifstream in(path);
