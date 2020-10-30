@@ -20,8 +20,14 @@ int main() {
 	std::cout << player.getHealth() << std::endl;
 	std::cout << player.getAge() << std::endl;
 
-	char * str = lsim::io::instring("swagrid : ");
-	lsim::io::Menu<const char *> novice_arnaqueur("big yoshi", "joe mama", "ben swolo");
+	std::string str = lsim::io::instring("swagrid : ");
+	lsim::io::Menu forgetTheName({"aaa", "big yoshi", "juan."});
+	int interestingVariable = forgetTheName.awaitUserInput();
+	std::cout << interestingVariable << std::endl;
+	forgetTheName.add("will will smith smith will smith?");
+	forgetTheName.add("will smith will smith will smith");
+	forgetTheName.display();
+
 	int num = lsim::io::inint("shrek : ");
 
 	std::cout << std::endl << str << " " << num << std::endl;

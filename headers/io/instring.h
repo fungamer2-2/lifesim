@@ -1,9 +1,11 @@
 #ifndef INSTRING_H
 #define INSTRING_H
 
+#include <string>
+
 namespace lsim {
 	namespace io {
-		char * instring(const char * message);
+		std::string instring(const char * message);
 	} // namespace io
 } // namespace lsim
 

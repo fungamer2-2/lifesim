@@ -3,34 +3,37 @@
 
 #include "../../headers/io/inchoice.h"
 
-template <class T, class ...Ts>
-lsim::io::Menu<T, Ts...>::Menu(Ts ...elements) {
-	this->store(elements...);
+lsim::io::Menu::Menu(std::vector<char *> choices) {
+	this->choices = choices;
 }
 
-template <class T, class ...Ts>
-void lsim::io::Menu<T, Ts...>::display() {
-	for (int i = 0; i < this->choices.size(); i++) {
-		std::cout << (i + 1) << ". " << this->choices[i] << std::endl;
+ void lsim::io::Menu::display(bool notNumerated) {
+	 if (notNumerated) {
+		 for (int i = 0; i < this->choices.size(); i++) {
+			std::cout << " - " << this->choices[i] << std::endl;
+		 }
+	 } else {
+		 for (int i = 0; i < this->choices.size(); i++) {
+			 std::cout << " " << (i + 1) << ". " << this->choices[i] << std::endl;
+		 }
+	 }
+}
+
+int lsim::io::Menu::awaitUserInput() {
+	int in;
+	while (true) {
+		this->display();
+		std::cin >> in;
+		if (std::cin.fail()) {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} else {
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return in;
+		}
 	}
 }
 
-template <class T, class ...Ts>
-int lsim::io::Menu<T, Ts...>::getUserInput() {
-	this->display;
-	int in;
-	do {
-		if (std::cin.fail()) {
-			std::cin.clear();
-		}
-		std::cin >> in;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	} while (std::cin.fail());
-	return in;
-}
-
-template <class T, class ...Ts>
-void lsim::io::Menu<T, Ts...>::store(T first, Ts ...rest) {
-	this->choices.push_back(first);
-	this->store(rest...);
+void lsim::io::Menu::add(char * nChoice) {
+	this->choices.push_back(nChoice);
 }

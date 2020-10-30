@@ -5,12 +5,15 @@
 
 int lsim::io::inint(const char * message) {
 	int in;
-	do {
-		std::cout << message << std::endl;
+	while (true) {
+		std::cout << message;
+		std::cin >> in;
 		if (std::cin.fail()) {
 			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		} else {
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return in;
 		}
-		std::cin >> in;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	} while (std::cin.fail());
+	}
 }
