@@ -1,5 +1,5 @@
-#ifndef INCHOICE_H
-#define INCHOICE_H
+#ifndef MENU_H
+#define MENU_H
 
 #include <vector>
 
@@ -11,6 +11,7 @@ namespace lsim {
 				void display(bool notNumerated = false);
 				int awaitUserInput();
 				void add(char *nChoice);
+				bool remove(char *choice);
 			private:
 				std::vector<char *> choices;
 		};
@@ -19,4 +20,4 @@ namespace lsim {
 
 // #include "../../src/io/inchoice.cpp"
 
-#endif // ifndef INCHOICE_H
+#endif // ifndef MENU_H
