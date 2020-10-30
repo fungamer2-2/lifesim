@@ -4,9 +4,9 @@
 #include "../../headers/io/inint.h"
 
 int lsim::io::inint(const char * message) {
-	std::cout << message;
 	int in;
 	do {
+		std::cout << message << std::endl;
 		if (std::cin.fail()) {
 			std::cin.clear();
 		}

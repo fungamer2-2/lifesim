@@ -3,18 +3,34 @@
 
 #include "../../headers/io/inchoice.h"
 
-short int lsim::io::inchoice(std::vector<const char *> choices) {
-	for (int i = 1; i <= choices.size(); i++) {
-		std::cout << i << ". " << choices[i] << std::endl;
+template <class T, class ...Ts>
+lsim::io::Menu<T, Ts...>::Menu(Ts ...elements) {
+	this->store(elements...);
+}
+
+template <class T, class ...Ts>
+void lsim::io::Menu<T, Ts...>::display() {
+	for (int i = 0; i < this->choices.size(); i++) {
+		std::cout << (i + 1) << ". " << this->choices[i] << std::endl;
 	}
-	short int result;
+}
+
+template <class T, class ...Ts>
+int lsim::io::Menu<T, Ts...>::getUserInput() {
+	this->display;
+	int in;
 	do {
 		if (std::cin.fail()) {
 			std::cin.clear();
 		}
-		std::cout << "Enter a number 1-" << choices.size() << " : ";
-		std::cin >> result;
+		std::cin >> in;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	} while (std::cin.fail() or result < 0 or result > choices.size());
-	return result;
+	} while (std::cin.fail());
+	return in;
+}
+
+template <class T, class ...Ts>
+void lsim::io::Menu<T, Ts...>::store(T first, Ts ...rest) {
+	this->choices.push_back(first);
+	this->store(rest...);
 }

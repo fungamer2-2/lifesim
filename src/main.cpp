@@ -1,7 +1,11 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
+
 #include "../headers/classes/mainCharacter.h"
+#include "../headers/io/inchoice.h"
+#include "../headers/io/inint.h"
+#include "../headers/io/instring.h"
 
 int main() {
 	srand(time(NULL));
@@ -15,6 +19,12 @@ int main() {
 	std::cout << player.getCharisma() << std::endl;
 	std::cout << player.getHealth() << std::endl;
 	std::cout << player.getAge() << std::endl;
+
+	char * str = lsim::io::instring("swagrid : ");
+	lsim::io::Menu<const char *> novice_arnaqueur("big yoshi", "joe mama", "ben swolo");
+	int num = lsim::io::inint("shrek : ");
+
+	std::cout << std::endl << str << " " << num << std::endl;
 
 	return 0;
 }
