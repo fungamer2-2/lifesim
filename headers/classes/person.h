@@ -4,6 +4,7 @@
 #include <random>
 #include <string>
 
+#include "../io/menu.h"
 #include "../generateStat.h"
 
 namespace lsim {
@@ -32,6 +33,7 @@ namespace lsim {
 			bool sex;
 			std::string firstName;
 			std::string lastName;
+			lsim::io::Menu menu;
 	}; // class Person
 } // namespace lsim
 

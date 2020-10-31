@@ -6,11 +6,12 @@
 namespace lsim {
     class mainCharacter : public lsim::Person {
         public:
-            mainCharacter(Parent *first, Parent *second);
+            mainCharacter();
             short int getHealth();
             short int updateHealth(short int offset);
         private:
             short int health;
+            lsim::Parent parents[2];
     }; // class mainCharacter
 } // namespace lsim
 

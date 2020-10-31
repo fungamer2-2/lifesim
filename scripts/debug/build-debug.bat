@@ -9,7 +9,7 @@ g++ -Wall -c -g -o mainCharacter.o src/classes/mainCharacter.cpp
 g++ -Wall -c -g -o parent.o src/classes/parent.cpp
 g++ -Wall -c -g -o instring.o src/io/instring.cpp
 g++ -Wall -c -g -o inint.o src/io/inint.cpp
-g++ -Wall -c -g -o inchoice.o src/io/inchoice.cpp
+g++ -Wall -c -g -o menu.o src/io/menu.cpp
 
-g++ -Wall -g main.o generateStat.o readJSON.o vehicle.o person.o mainCharacter.o parent.o instring.o inint.o inchoice.o
+g++ -Wall -g main.o generateStat.o readJSON.o vehicle.o person.o mainCharacter.o parent.o instring.o inint.o menu.o
 move a.exe bin\a.exe
