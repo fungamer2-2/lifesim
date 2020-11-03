@@ -14,7 +14,7 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     this->relationType = lsim::RELATIONSELF;
     this->relationships.push_back(&this->parents[0]);
     this->relationships.push_back(&this->parents[1]);
-    this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (Mother)");
+    this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (" + lsim::relationType(this->parents[0].getRelationType()) + ")");
     this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (Father)");
 }
 

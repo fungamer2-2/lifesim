@@ -82,13 +82,16 @@ bool lsim::Person::getSex() {
 }
 
 void lsim::Person::goToMenu() {
-	std::cout << std::endl << this->firstName << " " << this->lastName << "("  << ") :" << std::endl;
+	std::cout << std::endl << this->firstName << " " << this->lastName << " (" << lsim::relationType(this->relationType) << ") :" << std::endl;
 	int choice = this->menu.awaitUserInput();
 	switch (choice) {
 		case 1:
-			std::cout << this->
 			break;
 		case 2:
 			break;
 	}
+}
+
+int lsim::Person::getRelationType() {
+	return this->relationType;
 }

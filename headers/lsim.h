@@ -13,6 +13,10 @@
 
 #include "jsonsupport/readJSON.h"
 
+
+#include "generateStat.h"
+#include "getRelationType.h"
+
 namespace lsim {
 	const bool MALE = false;
 	const bool FEMALE = true;
