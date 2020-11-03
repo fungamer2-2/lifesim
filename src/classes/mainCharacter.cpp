@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../headers/lsim.h"
 
 lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim::Parent(lsim::MALE)}) {
@@ -16,6 +17,9 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     this->relationships.push_back(&this->parents[1]);
     this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (" + lsim::relationType(this->parents[0].getRelationType()) + ")");
     this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (Father)");
+    this->menu.remove("Exit");
+    this->menu.add("Relationships");
+    this->menu.add("Exit");
 }
 
 short int lsim::mainCharacter::getHealth() {
@@ -27,7 +31,24 @@ short int lsim::mainCharacter::updateHealth(short int offset) {
     return this->health;
 }
 
-void lsim::mainCharacter::goToRelationships() {
-    int relationshipAction = this->relationshipsMenu.awaitUserInput();
-    this->relationships[relationshipAction - 1]->goToMenu();
+void lsim::mainCharacter::goToMenu() {
+    int choice = this->menu.awaitUserInput();
+    switch (choice) {
+        case 1:
+            std::cout << "Sex : " << (this->sex == lsim::FEMALE ? "Female" : "Male") << std::endl;
+			std::cout << "Age : " << this->age << std::endl;
+			std::cout << "Balance : $" << this->balance << std::endl;
+			std::cout << "Intelligence : " << this->intelligence << std::endl;
+			std::cout << "Charisma : " << this->charisma << std::endl;
+			std::cout << "Relationship : " << this->relation << std::endl;
+			break;
+        case 2:
+            {
+                int relationshipChoice = this->relationshipsMenu.awaitUserInput();
+                this->relationships[relationshipChoice - 1]->goToMenu();
+            }
+            break;
+        case 3:
+            break;
+    }
 }

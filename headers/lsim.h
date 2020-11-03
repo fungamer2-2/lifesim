@@ -13,7 +13,6 @@
 
 #include "jsonsupport/readJSON.h"
 
-
 #include "generateStat.h"
 #include "relationType.h"
 

@@ -9,7 +9,7 @@ namespace lsim {
             mainCharacter();
             short int getHealth();
             short int updateHealth(short int offset);
-            void goToRelationships();
+            void goToMenu();
         private:
             short int health;
             lsim::Parent parents[2];

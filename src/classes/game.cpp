@@ -4,7 +4,7 @@ lsim::Game::Game() {
 	this->mainMenu.add("Age");
 	this->mainMenu.add("Occupation");
 	this->mainMenu.add("Activities");
-	this->mainMenu.add("Relationships");
+	this->mainMenu.add("Self");
 	this->mainMenu.add("Quit");
 }
 
@@ -21,7 +21,7 @@ void lsim::Game::play() {
 			case 3:
 				break;
 			case 4:
-				this->player.goToRelationships();
+				this->player.goToMenu();
 				break;
 			case 5:
 				return;
