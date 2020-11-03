@@ -1,5 +1,5 @@
-#include "../../headers/jsonsupport/readJSON.h"
-#include "../../headers/classes/person.h"
+#include "../../headers/lsim.h"
+#include <iostream>
 
 lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {
 	this->balance = nBalance;
@@ -11,7 +11,7 @@ lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelli
 	std::vector<std::string> strs;
 	std::vector<int> nums;
 	std::vector<bool> bools;
-	if (this->sex) {
+	if (this->sex == lsim::FEMALE) {
 		readJSON("./data/jsons/person.json", rand() % 50, &strs, &nums, &bools);
 	} else {
 		readJSON("./data/jsons/person.json", rand() % 50 + 50, &strs, &nums, &bools);
@@ -19,21 +19,24 @@ lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelli
 	readJSON("./data/jsons/person.json", rand() % 100 + 100, &strs, &nums, &bools);
 	this->firstName = strs[0];
 	this->lastName = strs[1];
+	this->relationType = lsim::RELATIONNULL;
+	this->menu.add("Stats");
+	this->menu.add("Exit");
 }
 
-const char * lsim::Person::getFirstName() {
-	return this->firstName.c_str();
+std::string lsim::Person::getFirstName() {
+	return this->firstName;
 }
 
-const char * lsim::Person::getLastName() {
-	return this->lastName.c_str();
+std::string lsim::Person::getLastName() {
+	return this->lastName;
 }
 
 int lsim::Person::getBalance() {
 	return this->balance;
 }
 
-int lsim::Person::updateBalane(int gains) {
+int lsim::Person::updateBalance(int gains) {
 	this->balance += gains;
 	return this->balance;
 }
@@ -76,4 +79,16 @@ short int lsim::Person::updateRelation(short int offset) {
 
 bool lsim::Person::getSex() {
 	return this->sex;
+}
+
+void lsim::Person::goToMenu() {
+	std::cout << std::endl << this->firstName << " " << this->lastName << "("  << ") :" << std::endl;
+	int choice = this->menu.awaitUserInput();
+	switch (choice) {
+		case 1:
+			std::cout << this->
+			break;
+		case 2:
+			break;
+	}
 }

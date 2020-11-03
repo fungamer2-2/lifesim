@@ -7,6 +7,7 @@ namespace lsim {
 	class Game {
 		public:
 			Game();
+			void play();
 			lsim::mainCharacter player;
 			lsim::io::Menu mainMenu;
 		private:

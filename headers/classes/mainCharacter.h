@@ -9,9 +9,12 @@ namespace lsim {
             mainCharacter();
             short int getHealth();
             short int updateHealth(short int offset);
+            void goToRelationships();
         private:
             short int health;
             lsim::Parent parents[2];
+            lsim::io::Menu relationshipsMenu;
+            std::vector<Person *> relationships;
     }; // class mainCharacter
 } // namespace lsim
 

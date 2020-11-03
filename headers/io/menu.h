@@ -7,13 +7,13 @@ namespace lsim {
 	namespace io {
 		class Menu {
 			public:
-				Menu(std::vector<char *> choices = std::vector<char *>());
+				Menu(std::vector<std::string> choices = std::vector<std::string>());
 				void display(bool notNumerated = false);
 				int awaitUserInput();
-				void add(char *nChoice);
-				bool remove(char *choice);
+				void add(std::string nChoice);
+				bool remove(std::string choice);
 			private:
-				std::vector<char *> choices;
+				std::vector<std::string> choices;
 		};
 	} // namespace io
 } // namespace lsim

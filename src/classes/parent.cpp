@@ -1,4 +1,4 @@
-#include "../../headers/classes/parent.h"
+#include "../../headers/lsim.h"
 
 lsim::Parent::Parent(bool nSex) : Person(nSex) {
 	if (this->relation < 20) {
@@ -9,5 +9,10 @@ lsim::Parent::Parent(bool nSex) : Person(nSex) {
 		this->relation += 30;
 	} else if (this->relation < 80) {
 		this->relation += 15;
+	}
+	if (this->sex == lsim::FEMALE) {
+		this->relationType = lsim::RELATIONMOTHER;
+	} else {
+		this->relationType = lsim::RELATIONFATHER;
 	}
 }

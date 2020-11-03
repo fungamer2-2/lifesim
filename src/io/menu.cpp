@@ -3,7 +3,7 @@
 
 #include "../../headers/io/menu.h"
 
-lsim::io::Menu::Menu(std::vector<char *> choices) {
+lsim::io::Menu::Menu(std::vector<std::string> choices) {
 	this->choices = choices;
 }
 
@@ -34,11 +34,11 @@ int lsim::io::Menu::awaitUserInput() {
 	}
 }
 
-void lsim::io::Menu::add(char *nChoice) {
+void lsim::io::Menu::add(std::string nChoice) {
 	this->choices.push_back(nChoice);
 }
 
-bool lsim::io::Menu::remove(char *choice) {
+bool lsim::io::Menu::remove(std::string choice) {
 	for (int i = 0; i < this->choices.size(); i++) {
 		if (this->choices[i] == choice) {
 			this->choices.erase(this->choices.begin() + i);

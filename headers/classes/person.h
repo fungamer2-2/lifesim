@@ -11,10 +11,10 @@ namespace lsim {
 	class Person {
 		public:
 			Person(bool nSex = rand() % 2, short int nAge = 0, int nBalance = 0, short int nIntelligence = generateStat(), short int nCharisma = generateStat(), short int nRelation = generateStat());
-			const char * getFirstName();
-			const char * getLastName();
+			std::string getFirstName();
+			std::string getLastName();
 			int getBalance();
-			int updateBalane(int gains);
+			int updateBalance(int gains);
 			short int getAge();
 			short int ageAYear();
 			short int getIntelligence();
@@ -24,7 +24,9 @@ namespace lsim {
 			short int getRelation();
 			short int updateRelation(short int offset);
 			bool getSex();
+			void goToMenu();
 		protected:
+			int relationType;
 			int balance;
 			short int age;
 			short int intelligence;

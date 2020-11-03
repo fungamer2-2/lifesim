@@ -13,4 +13,14 @@
 
 #include "jsonsupport/readJSON.h"
 
+namespace lsim {
+	const bool MALE = false;
+	const bool FEMALE = true;
+	
+	const int RELATIONNULL = 0;
+	const int RELATIONSELF = 1;
+	const int RELATIONMOTHER = 2;
+	const int RELATIONFATHER = 3;
+}
+
 #endif // ifndef LSIM_H
