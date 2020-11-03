@@ -12,11 +12,11 @@ lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelli
 	std::vector<int> nums;
 	std::vector<bool> bools;
 	if (this->sex == lsim::FEMALE) {
-		readJSON("./data/jsons/person.json", rand() % 50, &strs, &nums, &bools);
+		lsim::readJSON("./data/jsons/person.json", rand() % 50, &strs, &nums, &bools);
 	} else {
-		readJSON("./data/jsons/person.json", rand() % 50 + 50, &strs, &nums, &bools);
+		lsim::readJSON("./data/jsons/person.json", rand() % 50 + 50, &strs, &nums, &bools);
 	}
-	readJSON("./data/jsons/person.json", rand() % 100 + 100, &strs, &nums, &bools);
+	lsim::readJSON("./data/jsons/person.json", rand() % 100 + 100, &strs, &nums, &bools);
 	this->firstName = strs[0];
 	this->lastName = strs[1];
 	this->relationType = lsim::RELATIONNULL;
@@ -86,6 +86,12 @@ void lsim::Person::goToMenu() {
 	int choice = this->menu.awaitUserInput();
 	switch (choice) {
 		case 1:
+			std::cout << "Sex : " << (this->sex == lsim::FEMALE ? "Female" : "Male") << std::endl;
+			std::cout << "Age : " << this->age << std::endl;
+			std::cout << "Balance : $" << this->balance << std::endl;
+			std::cout << "Intelligence : " << this->intelligence << std::endl;
+			std::cout << "Charisma : " << this->charisma << std::endl;
+			std::cout << "Relationship : " << this->relation << std::endl;
 			break;
 		case 2:
 			break;

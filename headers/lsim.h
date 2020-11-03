@@ -15,7 +15,7 @@
 
 
 #include "generateStat.h"
-#include "getRelationType.h"
+#include "relationType.h"
 
 namespace lsim {
 	const bool MALE = false;

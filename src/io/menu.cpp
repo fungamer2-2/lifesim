@@ -32,6 +32,7 @@ int lsim::io::Menu::awaitUserInput() {
 			return in;
 		}
 	}
+	std::cout << std::endl;
 }
 
 void lsim::io::Menu::add(std::string nChoice) {

@@ -11,8 +11,9 @@ g++ -Wall -c -o instring.o src/io/instring.cpp
 g++ -Wall -c -o inint.o src/io/inint.cpp
 g++ -Wall -c -o menu.o src/io/menu.cpp
 g++ -Wall -c -o game.o src/classes/game.cpp
+g++ -Wall -c -o relationType.o src/relationType.cpp
 
-g++ -Wall -o main.exe main.o generateStat.o readJSON.o vehicle.o person.o mainCharacter.o parent.o instring.o inint.o menu.o game.o
+g++ -Wall -o main.exe main.o generateStat.o readJSON.o vehicle.o person.o mainCharacter.o parent.o instring.o inint.o menu.o game.o relationType.o
 del *.o
 move main.exe bin\main.exe
 .\bin\main.exe
