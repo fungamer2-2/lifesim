@@ -91,7 +91,7 @@ void lsim::Person::goToMenu() {
 			std::cout << "Balance : $" << this->balance << std::endl;
 			std::cout << "Intelligence : " << this->intelligence << std::endl;
 			std::cout << "Charisma : " << this->charisma << std::endl;
-			std::cout << "Relationship : " << this->relation << std::endl;
+			std::cout << "Relationship : " << this->relation << std::endl << std::endl;
 			break;
 		case 2:
 			break;

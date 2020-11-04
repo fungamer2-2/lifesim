@@ -16,7 +16,7 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     this->relationships.push_back(&this->parents[0]);
     this->relationships.push_back(&this->parents[1]);
     this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (" + lsim::relationType(this->parents[0].getRelationType()) + ")");
-    this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (Father)");
+    this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (" + lsim::relationType(this->parents[1].getRelationType()) + ")");
     this->menu.remove("Exit");
     this->menu.add("Relationships");
     this->menu.add("Exit");
@@ -32,6 +32,7 @@ short int lsim::mainCharacter::updateHealth(short int offset) {
 }
 
 void lsim::mainCharacter::goToMenu() {
+    std::cout << std::endl << this->firstName << " " << this->lastName << " (" << lsim::relationType(this->relationType) << ") :" << std::endl;
     int choice = this->menu.awaitUserInput();
     switch (choice) {
         case 1:
@@ -40,10 +41,11 @@ void lsim::mainCharacter::goToMenu() {
 			std::cout << "Balance : $" << this->balance << std::endl;
 			std::cout << "Intelligence : " << this->intelligence << std::endl;
 			std::cout << "Charisma : " << this->charisma << std::endl;
-			std::cout << "Relationship : " << this->relation << std::endl;
+			std::cout << "Relationship : " << this->relation << std::endl << std::endl;
 			break;
         case 2:
             {
+                std::cout << std::endl;
                 int relationshipChoice = this->relationshipsMenu.awaitUserInput();
                 this->relationships[relationshipChoice - 1]->goToMenu();
             }

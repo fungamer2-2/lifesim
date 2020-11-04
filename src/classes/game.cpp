@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../headers/classes/game.h"
 
 lsim::Game::Game() {
@@ -26,5 +27,6 @@ void lsim::Game::play() {
 			case 5:
 				return;
 		}
+		std::cout << std::endl;
 	}
 }
