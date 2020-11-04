@@ -16,7 +16,7 @@ namespace lsim {
 			int getBalance();
 			int updateBalance(int gains);
 			short int getAge();
-			short int ageAYear();
+			virtual short int ageAYear();
 			short int getIntelligence();
 			short int updateIntelligence(short int offset);
 			short int getCharisma();

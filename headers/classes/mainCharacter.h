@@ -10,6 +10,7 @@ namespace lsim {
             short int getHealth();
             short int updateHealth(short int offset);
             void goToMenu();
+            short int ageAYear();
         private:
             short int health;
             lsim::Parent parents[2];

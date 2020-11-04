@@ -5,6 +5,6 @@
 
 namespace lsim {
 	std::string relationType(int relationType);
-}
+} // namespace lsim
 
-#endif
+#endif // ifndef RELATIONTYPE_H

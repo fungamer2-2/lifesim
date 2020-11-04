@@ -54,3 +54,9 @@ void lsim::mainCharacter::goToMenu() {
             break;
     }
 }
+
+short int lsim::mainCharacter::ageAYear() {
+    this->age++;
+    // here : automatically enter school
+    return this->age;
+}

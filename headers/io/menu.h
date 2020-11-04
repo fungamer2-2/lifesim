@@ -18,6 +18,4 @@ namespace lsim {
 	} // namespace io
 } // namespace lsim
 
-// #include "../../src/io/inchoice.cpp"
-
 #endif // ifndef MENU_H

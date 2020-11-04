@@ -6,6 +6,8 @@
 #include "classes/parent.h"
 #include "classes/person.h"
 #include "classes/vehicle.h"
+#include "classes/school.h"
+#include "classes/class.h"
 
 #include "io/inint.h"
 #include "io/instring.h"
@@ -24,6 +26,6 @@ namespace lsim {
 	const int RELATIONSELF = 1;
 	const int RELATIONMOTHER = 2;
 	const int RELATIONFATHER = 3;
-}
+} // namespace lsim
 
 #endif // ifndef LSIM_H
