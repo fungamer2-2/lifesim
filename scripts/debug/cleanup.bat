@@ -1,5 +1,5 @@
 @echo off
 
-del **/a.exe
+del *.exe
 del *.o
 del ./bin/main.exe

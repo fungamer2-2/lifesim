@@ -1,4 +1,6 @@
 from os import SEEK_END
+import matplotlib
+
 file = open("./data/names.txt", "r")
 json = open("./data/jsons/person.json", "a+")
 json.write("{\n")
