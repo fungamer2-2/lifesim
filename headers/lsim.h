@@ -7,7 +7,8 @@
 #include "classes/person.h"
 #include "classes/vehicle.h"
 #include "classes/school.h"
-#include "classes/class.h"
+#include "classes/classmate.h"
+#include "classes/teacher.h"
 
 #include "io/inint.h"
 #include "io/instring.h"
@@ -19,13 +20,19 @@
 #include "relationType.h"
 
 namespace lsim {
-	const bool MALE = false;
-	const bool FEMALE = true;
+	constexpr bool MALE = false;
+	constexpr bool FEMALE = true;
 	
-	const int RELATIONNULL = 0;
-	const int RELATIONSELF = 1;
-	const int RELATIONMOTHER = 2;
-	const int RELATIONFATHER = 3;
+	constexpr int RELATIONNULL = 0;
+	constexpr int RELATIONSELF = 1;
+	constexpr int RELATIONMOTHER = 2;
+	constexpr int RELATIONFATHER = 3;
+
+	constexpr int SCHOOLNULL = 0;
+	constexpr int SCHOOLELEMENTARY = 1;
+	constexpr int SCHOOLMIDDLE = 2;
+	constexpr int SCHOOLHIGH = 3;
+	constexpr int SCHOOLCOLLEGE = 4;
 } // namespace lsim
 
 #endif // ifndef LSIM_H

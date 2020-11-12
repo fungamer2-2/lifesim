@@ -6,7 +6,10 @@
 namespace lsim {
 	class Teacher : public lsim::Person {
 		public:
+			Teacher();
+			int getSeverity();
 		private:
+			int severity;
 	}; // class Teacher
 } // namespace lsim
 
