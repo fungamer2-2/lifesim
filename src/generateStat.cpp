@@ -14,5 +14,5 @@ short int lsim::generateStat(float multiplier, short int bonus) {
 	} else if (result < 0) {
 		result = 0;
 	}
-	return result;a
+	return result;
 }
