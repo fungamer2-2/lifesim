@@ -88,7 +88,6 @@ void lsim::Person::goToMenu() {
 		case 1:
 			std::cout << "Sex : " << (this->sex == lsim::FEMALE ? "Female" : "Male") << std::endl;
 			std::cout << "Age : " << this->age << std::endl;
-			std::cout << "Balance : $" << this->balance << std::endl;
 			std::cout << "Intelligence : " << this->intelligence << std::endl;
 			std::cout << "Charisma : " << this->charisma << std::endl;
 			std::cout << "Relationship : " << this->relation << std::endl << std::endl;

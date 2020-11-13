@@ -15,4 +15,8 @@ lsim::Parent::Parent(bool nSex) : Person(nSex) {
 	} else {
 		this->relationType = lsim::RELATIONFATHER;
 	}
+	this->age = rand() % 8 + 26;
+	if (this->sex == lsim::MALE) {
+		this->age += 2;
+	}
 }
