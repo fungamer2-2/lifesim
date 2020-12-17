@@ -1,4 +1,4 @@
-#include "../../headers/classes/school.h"
+#include "../../headers/main.h"
 
 lsim::School::School(int nSchoolType, int nCurrentYear) {
 	this->schoolType = nSchoolType;

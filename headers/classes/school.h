@@ -1,7 +1,8 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
-#include "../lsim.h"
+#include "./teacher.h"
+#include "./classmate.h"
 
 namespace lsim {
 	class School {

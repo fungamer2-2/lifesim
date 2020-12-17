@@ -7,7 +7,6 @@ short int lsim::generateStat(float multiplier, short int bonus) {
 	short int x = rand() % 70 + 30;
 	short int y = rand() % 100;
 	short int result = (x + y) / 2 * multiplier;
-	short int distance = result - 60;
 	result += bonus;
 	if (result > 100) {
 		result = 100;

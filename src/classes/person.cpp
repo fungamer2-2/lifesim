@@ -1,4 +1,4 @@
-#include "../../headers/lsim.h"
+#include "../../headers/main.h"
 #include <iostream>
 
 lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelligence, short int nCharisma, short int nRelation) {

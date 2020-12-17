@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../headers/lsim.h"
+#include "../../headers/main.h"
 
 lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim::Parent(lsim::MALE)}) {
     this->health = generateStat();
