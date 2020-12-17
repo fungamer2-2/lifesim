@@ -1,5 +1,6 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
+
 #include "../lsim.h"
 
 namespace lsim {

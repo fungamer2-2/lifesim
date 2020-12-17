@@ -8,17 +8,12 @@ lsim::Person::Person(bool nSex, short int nAge, int nBalance, short int nIntelli
 	this->charisma = nCharisma;
 	this->sex = nSex;
 	this->relation = nRelation;
-	std::vector<std::string> strs;
-	std::vector<int> nums;
-	std::vector<bool> bools;
 	if (this->sex == lsim::FEMALE) {
-		lsim::readJSON("./data/jsons/person.json", rand() % 50, &strs, &nums, &bools);
+		this->firstName = lsim::io::getTXT("./data/txts/names.txt", rand() % 50);
 	} else {
-		lsim::readJSON("./data/jsons/person.json", rand() % 50 + 50, &strs, &nums, &bools);
+		this->firstName = lsim::io::getTXT("./data/txts/names.txt", rand() % 50 + 50);
 	}
-	lsim::readJSON("./data/jsons/person.json", rand() % 100 + 100, &strs, &nums, &bools);
-	this->firstName = strs[0];
-	this->lastName = strs[1];
+	this->lastName = lsim::io::getTXT("./data/txts/names.txt", rand() % 100);
 	this->relationType = lsim::RELATIONNULL;
 	this->menu.add("Stats");
 	this->menu.add("Exit");
