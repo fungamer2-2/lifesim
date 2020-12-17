@@ -4,6 +4,7 @@ lsim::School::School(int nSchoolType, int nCurrentYear) {
 	this->schoolType = nSchoolType;
 	this->currentYear = currentYear;
 	this->avgGrades = 0;
+	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
 	int randomStudents = rand() % 5;
 	switch (this->schoolType) {
 		case lsim::SCHOOLELEMENTARY:

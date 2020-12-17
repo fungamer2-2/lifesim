@@ -15,6 +15,8 @@ namespace lsim {
 	constexpr int SCHOOLMIDDLE = 2;
 	constexpr int SCHOOLHIGH = 3;
 	constexpr int SCHOOLCOLLEGE = 4;
+
+	constexpr int ANY = -1;
 } // namespace lsim
 
 #endif // ifndef LSIM_H
