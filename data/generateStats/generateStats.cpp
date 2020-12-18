@@ -1,5 +1,5 @@
-#include "../../headers/generateStat.h"
 #include <fstream>
+#include "../../headers/generateStat.h"
 
 int main() {
 	std::ofstream file("data/generateStats/generateStatResults.txt", std::ios::trunc);
