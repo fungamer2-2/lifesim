@@ -4,10 +4,9 @@
 #include "../../headers/classes/school.h"
 
 int main() {
-	std::ifstream in("data/generateStats/generateStatResults.txt");
-	std::ofstream out("data/generateStats/gradeResults.txt", std::ios::trunc);
-	int stats[101];
-	int grades[101];
+		std::ifstream in("data/generateStats/generateStatResults.txt");
+	int stats[101] = {0};
+	int grades[101] = {0};
 	int result;
 	for (int i = 0; i < 100; i++) {
 		in.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
@@ -20,11 +19,13 @@ int main() {
 		lsim::Person p;
 		p.updateIntelligence(i - p.getIntelligence());
 		result = s.updateGrades(p);
-		std::cout << p.getIntelligence() << " : " << result << "%" << std::endl;
 		grades[result] += stats[i];
 	}
+	in.close();
+	std::ofstream out("data/generateStats/gradeResults.txt", std::ios::trunc);
 	for (int i = 0; i < 100; i++) {
 		out << i << " " << grades[i] << std::endl;
 	}
+	out.close();
 	return 0;
 }
