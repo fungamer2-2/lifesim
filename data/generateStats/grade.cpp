@@ -1,5 +1,6 @@
 #include <fstream>
 #include <limits>
+#include <iostream>
 #include "../../headers/classes/school.h"
 
 int main() {
@@ -7,19 +8,22 @@ int main() {
 	std::ofstream out("data/generateStats/gradeResults.txt", std::ios::trunc);
 	int stats[101];
 	int grades[101];
-	for (int i = 0; i < 101; i++) {
+	int result;
+	for (int i = 0; i < 100; i++) {
+		in.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
 		in >> stats[i];
 		if (in.fail()) {
 			in.clear();
 		}
 		in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		for (int i = 0; i < stats[i]; i++) {
-			lsim::School s;
-			lsim::Person p;
-			grades[s.updateGrades(p)]++;
-		}
+		lsim::School s;
+		lsim::Person p;
+		p.updateIntelligence(i - p.getIntelligence());
+		result = s.updateGrades(p);
+		std::cout << p.getIntelligence() << " : " << result << "%" << std::endl;
+		grades[result] += stats[i];
 	}
-	for (int i = 0; i < 101; i++) {
+	for (int i = 0; i < 100; i++) {
 		out << i << " " << grades[i] << std::endl;
 	}
 	return 0;
