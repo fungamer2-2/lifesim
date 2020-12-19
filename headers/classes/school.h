@@ -7,9 +7,10 @@
 #include "./mainCharacter.h"
 
 namespace lsim {
+	class mainCharacter;
 	class School {
 		public:
-			School(int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0, lsim::mainCharacter *nSelf);
+			School(lsim::mainCharacter *nSelf, int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
 			int updateGrades();
 			void putEfforts(bool efforts = true);
 			void goToMenu();

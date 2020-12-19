@@ -2,8 +2,6 @@
 
 g++ -Wall -c -g -o main.o src/main.cpp
 
-g++ -Wall -c -g -o generateStat.o src/generateStat.cpp
-
 g++ -Wall -c -g -o vehicle.o src/classes/vehicle.cpp
 g++ -Wall -c -g -o person.o src/classes/person.cpp
 g++ -Wall -c -g -o mainCharacter.o src/classes/mainCharacter.cpp
@@ -17,7 +15,8 @@ g++ -Wall -c -g -o menu.o src/io/menu.cpp
 g++ -Wall -c -g -o getTXT.o src/io/getTXT.o
 
 g++ -Wall -c -g -o game.o src/classes/game.cpp
-g++ -Wall -c -g -o relationType.o src/relationType.cpp
+g++ -Wall -c -g -o getType.o src/getType.cpp
+g++ -Wall -c -g -o generateStat.o src/generateStat.cpp
 
-g++ -Wall -g main.o generateStat.o vehicle.o person.o mainCharacter.o parent.o teacher.o school.o instring.o inint.o menu.o getTXT.o game.o relationType.o
+g++ -Wall -g main.o vehicle.o person.o mainCharacter.o parent.o teacher.o school.o instring.o inint.o menu.o getTXT.o game.o getType.o generateStat.o
 move a.exe bin\a.exe
