@@ -11,6 +11,7 @@ namespace lsim {
 			School(int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
 			int updateGrades(lsim::Person &person);
 			void putEfforts(bool efforts = true);
+			void goToMenu();
 		private:
 			std::string name;
 			int schoolType;
@@ -19,6 +20,7 @@ namespace lsim {
 			int efforts;
 			lsim::Teacher teacher;
 			std::vector<lsim::Classmate> classmates;
+			lsim::io::Menu schoolMenu;
 	}; // class School
 } // namespace lsim
 

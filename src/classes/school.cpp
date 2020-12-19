@@ -32,9 +32,26 @@ int lsim::School::updateGrades(lsim::Person &person) {
 	}
 	float multiplier = (this->efforts / 100) / 3;
 	multiplier += 2 / 3;
-	return baseGrade * multiplier;
+	float bonus = 2 * person.getHappiness();
+	bonus /= 25;
+	bonus -= 4;
+	if (bonus < 0) {
+		bonus -= 2;
+	}
+	this->avgGrades = (baseGrade * multiplier) + bonus;
+	return (baseGrade * multiplier) + bonus;
 }
 
-void lsim::School::updateEfforts(bool efforts) {
+void lsim::School::updateEfforts(bool p_efforts) {
+	if (p_efforts) {
+		float distance = 100 - this->efforts;
+		distance /= 1.5;
+		this->efforts = 100 - distance;
+	} else {
+		this->efforts /= 1.5;
+	}
+}
+
+void lsim::School::goToMenu() {
 	
 }
