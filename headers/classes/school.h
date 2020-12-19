@@ -10,11 +10,13 @@ namespace lsim {
 		public:
 			School(int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
 			int updateGrades(lsim::Person &person);
+			void putEfforts(bool efforts = true);
 		private:
 			std::string name;
 			int schoolType;
 			int currentYear;
 			int avgGrades;
+			int efforts;
 			lsim::Teacher teacher;
 			std::vector<lsim::Classmate> classmates;
 	}; // class School

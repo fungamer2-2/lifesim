@@ -4,7 +4,7 @@ lsim::School::School(int nSchoolType, int nCurrentYear) {
 	this->schoolType = nSchoolType;
 	this->currentYear = currentYear;
 	this->avgGrades = 0;
-	//this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
+	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
 	int randomStudents = rand() % 5;
 	switch (this->schoolType) {
 		case lsim::SCHOOLELEMENTARY:
@@ -18,16 +18,23 @@ lsim::School::School(int nSchoolType, int nCurrentYear) {
 			randomStudents += 28;
 			break;
 	}
-	//for (int i = 0; i < randomStudents; i++) {
-	//	this->classmates.push_back(lsim::Classmate());
-	//}
+	for (int i = 0; i < randomStudents; i++) {
+		this->classmates.push_back(lsim::Classmate());
+	}
+	this->efforts = rand() % 15 + 55;
 }
 
 int lsim::School::updateGrades(lsim::Person &person) {
 	int baseGrade = 0.6 * person.getIntelligence();
-	baseGrade += 42;
+	baseGrade += 44;
 	if (baseGrade > 100) {
 		baseGrade -= 2;
 	}
-	return baseGrade;
+	float multiplier = (this->efforts / 100) / 3;
+	multiplier += 2 / 3;
+	return baseGrade * multiplier;
+}
+
+void lsim::School::updateEfforts(bool efforts) {
+	
 }
