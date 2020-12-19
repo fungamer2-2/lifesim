@@ -2,6 +2,7 @@
 #define MAINCHARACTER_H
 
 #include "parent.h"
+#include "school.h"
 
 namespace lsim {
     class mainCharacter : public lsim::Person {

@@ -19,6 +19,6 @@
 #include "io/menu.h"
 
 #include "generateStat.h"
-#include "relationType.h"
+#include "getType.h"
 
 #endif // ifndef MAIN_H
