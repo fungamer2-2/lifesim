@@ -2,9 +2,10 @@
 #define OCCUPATION_H
 
 #include "../lsim.h"
-#include "./mainCharacter.h"
+#include "../io/menu.h"
 
 namespace lsim {
+	class mainCharacter;
 	class Occupation {
 		public:
 			Occupation(lsim::mainCharacter *nSelf, int occupationType = lsim::OCCUPATIONNULL);

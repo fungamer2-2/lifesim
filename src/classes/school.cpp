@@ -31,14 +31,14 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYe
 }
 
 int lsim::School::updateGrades() {
-	int baseGrade = 0.6 * self->getIntelligence();
+	int baseGrade = 0.6 * this->self->getIntelligence();
 	baseGrade += 44;
 	if (baseGrade > 100) {
 		baseGrade -= 2;
 	}
 	float multiplier = (this->efforts / 100) / 3;
 	multiplier += 2 / 3;
-	float bonus = 2 * self->getRelation();
+	float bonus = 2 * this->self->getRelation();
 	bonus /= 25;
 	bonus -= 4;
 	if (bonus < 0) {
@@ -63,7 +63,7 @@ void lsim::School::goToMenu() {
 			std::cout << "Studying less... Efforts are now" << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 4:
-			if (self->getAge() < 16) {
+			if (this->self->getAge() < 16) {
 				chance = rand() % 100;
 				if (chance < 2) {
 					std::cout << "Somehow, your parents let you drop out of school! Now what?" << std::endl;
