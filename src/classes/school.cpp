@@ -1,14 +1,12 @@
 #include <iostream>
 #include "../../headers/main.h"
 
-lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYear) {
-	this->schoolType = nSchoolType;
+lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYear) : lsim::Occupation(nSelf, nSchoolType) {
 	this->currentYear = currentYear;
 	this->avgGrades = 0;
 	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
-	this->self = nSelf;
 	int randomStudents = rand() % 5;
-	switch (this->schoolType) {
+	switch (this->type) {
 		case lsim::SCHOOLELEMENTARY:
 			randomStudents += 22;
 			break;
@@ -25,12 +23,11 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYe
 		this->classmatesMenu.add(this->classmates[i].getFirstName() + " " + this->classmates[i].getLastName());
 	}
 	this->efforts = rand() % 15 + 55;
-	this->schoolMenu.add("Teacher");
-	this->schoolMenu.add("Classmates");
-	this->schoolMenu.add("Study harder");
-	this->schoolMenu.add("Study less");
-	this->schoolMenu.add("Drop out");
-	this->schoolMenu.add("Exit");
+	this->menu.remove("Exit");
+	this->menu.add("Drop out");
+	this->menu.add("Teacher");
+	this->menu.add("Classmates");
+	this->menu.add("Exit");
 }
 
 int lsim::School::updateGrades() {
@@ -51,36 +48,21 @@ int lsim::School::updateGrades() {
 	return (baseGrade * multiplier) + bonus;
 }
 
-void lsim::School::putEfforts(bool p_efforts) {
-	if (p_efforts) {
-		float distance = 100 - this->efforts;
-		distance /= 1.5;
-		this->efforts = 100 - distance;
-	} else {
-		this->efforts /= 1.5;
-	}
-}
-
 void lsim::School::goToMenu() {
-	std::cout << this->name << " (" << lsim::schoolType(this->schoolType) << ") :" << std::endl;
-	int choice = this->schoolMenu.awaitUserInput();
+	std::cout << this->name << " (" << lsim::occupationType(this->type) << ") :" << std::endl;
+	int choice = this->menu.awaitUserInput();
 	int chance, classmateChoice;
 	switch (choice) {
 		case 1:
-			this->teacher.goToMenu();
+			std::cout << "Efforts : " << this->efforts;
 			break;
 		case 2:
-			std::cout << std::endl;
-			classmateChoice = this->classmatesMenu.awaitUserInput();
-			this->classmates[classmateChoice - 1].goToMenu();
+			std::cout << "Studying harder! Efforts are now" << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 3:
-			this->putEfforts(true);
+			std::cout << "Studying less... Efforts are now" << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 4:
-			this->putEfforts(false);
-			break;
-		case 5:
 			if (self->getAge() < 16) {
 				chance = rand() % 100;
 				if (chance < 2) {
@@ -90,7 +72,15 @@ void lsim::School::goToMenu() {
 				}
 			}
 			break;
+		case 5:
+			this->teacher.goToMenu();
+			break;
 		case 6:
+			std::cout << std::endl;
+			classmateChoice = this->classmatesMenu.awaitUserInput();
+			this->classmates[classmateChoice - 1].goToMenu();
+			break;
+		case 7:
 			break;
 	}
 }

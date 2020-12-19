@@ -10,11 +10,13 @@ namespace lsim {
 	constexpr int RELATIONMOTHER = 2;
 	constexpr int RELATIONFATHER = 3;
 
-	constexpr int SCHOOLNULL = 0;
-	constexpr int SCHOOLELEMENTARY = 1;
-	constexpr int SCHOOLMIDDLE = 2;
-	constexpr int SCHOOLHIGH = 3;
-	constexpr int SCHOOLCOLLEGE = 4;
+	constexpr int OCCUPATIONNULL = 0;
+	constexpr int SCHOOLNULL = 1;
+	constexpr int SCHOOLELEMENTARY = 2;
+	constexpr int SCHOOLMIDDLE = 3;
+	constexpr int SCHOOLHIGH = 4;
+	constexpr int SCHOOLCOLLEGE = 5;
+	constexpr int JOBNULL = 6;
 
 	constexpr int ANY = -1;
 } // namespace lsim

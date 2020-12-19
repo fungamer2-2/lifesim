@@ -5,7 +5,7 @@
 
 namespace lsim {
 	std::string relationType(int relationType);
-	std::string schoolType(int schoolType);
+	std::string occupationType(int occupationType);
 } // namespace lsim
 
 #endif // ifndef GETTYPE

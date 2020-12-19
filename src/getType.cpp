@@ -14,18 +14,22 @@ std::string lsim::relationType(int relationType) {
 	return "NULLRELATION";
 }
 
-std::string lsim::schoolType(int schoolType) {
-	switch (schoolType) {
+std::string lsim::occupationType(int occupationType) {
+	switch (occupationType) {
 		case 0:
-			return "DEFAULTSCHOOL";
+			return "DEFAULTOCCUPATION";
 		case 1:
-			return "Elementary School";
+			return "DEFAULTSCHOOL";
 		case 2:
-			return "Middle School";
+			return "Elementary School";
 		case 3:
-			return "High School";
+			return "Middle School";
 		case 4:
+			return "High School";
+		case 5:
 			return "College";
+		case 6:
+			return "DEFAULTJOB";
 	}
-	return "NULLSCHOOL";
+	return "NULLOCCUPATION";
 }
