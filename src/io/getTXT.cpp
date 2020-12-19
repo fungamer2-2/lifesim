@@ -10,8 +10,8 @@ std::string lsim::io::getTXT(const char * path, int pos) {
 	while (std::getline(in, out)) {
 		numLines++;
 	}
+	in.clear();
 	in.seekg(0);
-
 	if (pos == -1) {
 		pos = rand() % numLines;
 	} else if (pos < -1 or pos > numLines) {
