@@ -16,6 +16,7 @@ namespace lsim {
             short int health;
             lsim::Parent parents[2];
             lsim::io::Menu relationshipsMenu;
+            lsim::io::Menu occupationsMenu;
             std::vector<Person *> relationships;
             std::vector<lsim::Occupation> occupations;
     }; // class mainCharacter

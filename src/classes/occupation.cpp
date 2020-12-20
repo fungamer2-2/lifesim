@@ -39,3 +39,11 @@ void lsim::Occupation::goToMenu() {
 			break;
 	}
 }
+
+int lsim::Occupation::getType() {
+	return this->type;
+}
+
+std::string lsim::Occupation::getName() {
+	return this->name;
+}

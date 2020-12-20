@@ -2,31 +2,20 @@
 #include "../../headers/classes/game.h"
 
 lsim::Game::Game() {
-	this->mainMenu.add("Age");
-	this->mainMenu.add("Occupation");
-	this->mainMenu.add("Activities");
-	this->mainMenu.add("Self");
-	this->mainMenu.add("Quit");
+	this->mainMenu.add("Start!");
+	this->mainMenu.add("Life is overrated");
 }
 
 void lsim::Game::play() {
-	int mainMenuAction;
-	while (true) {
-		mainMenuAction = this->mainMenu.awaitUserInput();
-		switch (mainMenuAction) {
-			case 1:
-				this->player.ageAYear();
-				break;
-			case 2:
-				break;
-			case 3:
-				break;
-			case 4:
-				this->player.goToMenu();
-				break;
-			case 5:
-				return;
-		}
-		std::cout << std::endl;
+	std::cout << "You are born as a " << (this->player.getSex() == lsim::FEMALE ? "female" : "male") << " human with the name of " << this->player.getFirstName() << " " << this->player.getLastName() << std::endl;
+	std::cout << "No rules, no instruction manual, good luck!" << std::endl;
+	int choice = this->mainMenu.awaitUserInput();
+	this->mainMenu.remove("Start!");
+	this->mainMenu.remove("Life is overrated");
+	this->mainMenu.add("Continue");
+	this->mainMenu.add("Suicide is my only way out of this misery");
+	while (choice != 2 and this->player.getHealth() > 0) {
+		this->player.goToMenu();
+		choice = this->mainMenu.awaitUserInput();
 	}
 }

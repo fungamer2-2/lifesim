@@ -18,6 +18,9 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (" + lsim::relationType(this->parents[0].getRelationType()) + ")");
     this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (" + lsim::relationType(this->parents[1].getRelationType()) + ")");
     this->menu.remove("Exit");
+    this->menu.add("Age");
+    this->menu.add("Occupations");
+    this->menu.add("Activities");
     this->menu.add("Relationships");
     this->menu.add("Exit");
 }
@@ -34,24 +37,38 @@ short int lsim::mainCharacter::updateHealth(short int offset) {
 void lsim::mainCharacter::goToMenu() {
     std::cout << std::endl << this->firstName << " " << this->lastName << " (" << lsim::relationType(this->relationType) << ") :" << std::endl;
     int choice = this->menu.awaitUserInput();
-    switch (choice) {
-        case 1:
-            std::cout << "Sex : " << (this->sex == lsim::FEMALE ? "Female" : "Male") << std::endl;
-			std::cout << "Age : " << this->age << std::endl;
-			std::cout << "Balance : $" << this->balance << std::endl;
-			std::cout << "Intelligence : " << this->intelligence << std::endl;
-			std::cout << "Charisma : " << this->charisma << std::endl;
-			std::cout << "Relationship : " << this->relation << std::endl << std::endl;
-			break;
-        case 2:
-            {
-                std::cout << std::endl;
-                int relationshipChoice = this->relationshipsMenu.awaitUserInput();
-                this->relationships[relationshipChoice - 1]->goToMenu();
-            }
-            break;
-        case 3:
-            break;
+    while (choice != 6) {
+        switch (choice) {
+            case 1:
+                std::cout << "Sex : " << (this->sex == lsim::FEMALE ? "Female" : "Male") << std::endl;
+                std::cout << "Age : " << this->age << std::endl;
+                std::cout << "Balance : $" << this->balance << std::endl;
+                std::cout << "Intelligence : " << this->intelligence << std::endl;
+                std::cout << "Charisma : " << this->charisma << std::endl;
+                std::cout << "Relationship : " << this->relation << std::endl << std::endl;
+                break;
+            case 2:
+                this->ageAYear();
+                break;
+            case 3:
+                if (this->occupations.size() > 0) {
+                    int choice = this->occupationsMenu.awaitUserInput();
+                    this->occupations[choice - 1].goToMenu();
+                } else {
+                    std::cout << "No current occupations" << std::endl;
+                }
+                break;
+            case 4:
+                break;
+            case 5:
+                {
+                    std::cout << std::endl;
+                    int relationshipChoice = this->relationshipsMenu.awaitUserInput();
+                    this->relationships[relationshipChoice - 1]->goToMenu();
+                }
+                break;
+        }
+        choice = this->menu.awaitUserInput();
     }
 }
 
@@ -59,6 +76,7 @@ short int lsim::mainCharacter::ageAYear() {
     this->age++;
     if (this->age == 5) {
         this->occupations.push_back(lsim::School(this, 2, 0));
+        this->occupationsMenu.add(this->occupations[0].getName());
     }
     return this->age;
 }
