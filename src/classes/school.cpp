@@ -44,6 +44,10 @@ int lsim::School::updateGrades() {
 	if (bonus < 0) {
 		bonus -= 2;
 	}
+	int tempBonus = this->teacher.getSeverity() / 25;
+	tempBonus += 2;
+	bonus += tempBonus;
+	bonus += rand() % 4 + 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
 	return (baseGrade * multiplier) + bonus;
 }

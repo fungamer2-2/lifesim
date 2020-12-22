@@ -2,7 +2,7 @@
 #include "../../headers/main.h"
 
 lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim::Parent(lsim::MALE)}) {
-    this->health = generateStat();
+    this->health = generateStat(1, 25);
     if (rand() % 2 == 1) {
         this->lastName = this->parents[0].getLastName();
     } else {
@@ -45,7 +45,8 @@ void lsim::mainCharacter::goToMenu() {
                 std::cout << "Balance : $" << this->balance << std::endl;
                 std::cout << "Intelligence : " << this->intelligence << std::endl;
                 std::cout << "Charisma : " << this->charisma << std::endl;
-                std::cout << "Relationship : " << this->relation << std::endl << std::endl;
+                std::cout << "Relationship : " << this->relation << std::endl;
+                std::cout << "Health : " << this->health << std::endl << std::endl;
                 break;
             case 2:
                 this->ageAYear();

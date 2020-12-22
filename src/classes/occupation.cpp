@@ -30,10 +30,10 @@ void lsim::Occupation::goToMenu() {
 			std::cout << "Efforts : " << this->efforts;
 			break;
 		case 2:
-			std::cout << "Working harder! Efforts are now" << this->putEfforts(true) << "." << std::endl;
+			std::cout << "Working harder! Efforts are now " << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 3:
-			std::cout << "Putting less efforts... Efforts are now" << this->putEfforts(false) << "." << std::endl;
+			std::cout << "Putting less efforts... Efforts are now " << this->putEfforts(false) << "." << std::endl;
 			break;
 		case 4:
 			break;
