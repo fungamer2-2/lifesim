@@ -11,6 +11,7 @@ namespace lsim {
 			School(lsim::mainCharacter *nSelf, int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
 			int updateGrades();
 			void goToMenu();
+			void passAYear();
 		private:
 			int currentYear;
 			int avgGrades;

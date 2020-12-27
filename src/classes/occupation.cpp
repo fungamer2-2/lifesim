@@ -47,3 +47,7 @@ int lsim::Occupation::getType() {
 std::string lsim::Occupation::getName() {
 	return this->name;
 }
+
+void lsim::Occupation::passAYear() {
+	
+}

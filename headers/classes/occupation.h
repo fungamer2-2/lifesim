@@ -13,6 +13,7 @@ namespace lsim {
 			int getType();
 			std::string getName();
 			virtual void goToMenu();
+			virtual void passAYear();
 		protected:
 			std::string name;
 			int type;

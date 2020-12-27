@@ -49,7 +49,8 @@ int lsim::School::updateGrades() {
 	bonus += tempBonus;
 	bonus += rand() % 4 + 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
-	return (baseGrade * multiplier) + bonus;
+	this->avgGrades = (baseGrade * multiplier) + bonus;
+	return this->avgGrades;
 }
 
 void lsim::School::goToMenu() {
@@ -87,4 +88,8 @@ void lsim::School::goToMenu() {
 		case 7:
 			break;
 	}
+}
+
+void lsim::School::passAYear() {
+	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << ".";
 }
