@@ -54,7 +54,7 @@ void lsim::mainCharacter::goToMenu() {
             case 3:
                 if (this->occupations.size() > 0) {
                     int choice = this->occupationsMenu.awaitUserInput();
-                    this->occupations[choice - 1].goToMenu();
+                    this->occupations[choice - 1]->goToMenu();
                 } else {
                     std::cout << "No current occupations" << std::endl;
                 }
@@ -76,11 +76,11 @@ void lsim::mainCharacter::goToMenu() {
 short int lsim::mainCharacter::ageAYear() {
     this->age++;
     if (this->age == 5) {
-        this->occupations.push_back(lsim::School(this, 2, 0));
-        this->occupationsMenu.add(this->occupations[0].getName());
+        this->occupations.push_back(&lsim::School(this, 2, 0));
+        this->occupationsMenu.add(this->occupations[0]->getName());
     }
     for (int i = 0; i < this->occupations.size(); i++) {
-        this->occupations[i].passAYear();
+        this->occupations[i]->passAYear();
     }
     return this->age;
 }

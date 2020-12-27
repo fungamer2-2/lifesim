@@ -18,7 +18,7 @@ namespace lsim {
             lsim::io::Menu relationshipsMenu;
             lsim::io::Menu occupationsMenu;
             std::vector<Person *> relationships;
-            std::vector<lsim::Occupation> occupations;
+            std::vector<lsim::Occupation *> occupations;
     }; // class mainCharacter
 } // namespace lsim
 
