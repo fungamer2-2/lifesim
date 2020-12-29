@@ -8,6 +8,7 @@ namespace lsim {
     class mainCharacter : public lsim::Person {
         public:
             mainCharacter();
+            ~mainCharacter();
             short int getHealth();
             short int updateHealth(short int offset);
             void goToMenu();

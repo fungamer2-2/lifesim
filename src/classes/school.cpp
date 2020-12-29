@@ -81,7 +81,6 @@ void lsim::School::goToMenu() {
 			this->teacher.goToMenu();
 			break;
 		case 6:
-			std::cout << "t e s t" << std::endl;
 			classmateChoice = this->classmatesMenu.awaitUserInput();
 			this->classmates[classmateChoice - 1].goToMenu();
 			break;
@@ -91,5 +90,5 @@ void lsim::School::goToMenu() {
 }
 
 void lsim::School::passAYear() {
-	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << ".";
+	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << "." << std::endl;
 }

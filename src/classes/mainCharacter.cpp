@@ -25,6 +25,12 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     this->menu.add("Exit");
 }
 
+lsim::mainCharacter::~mainCharacter() {
+    for (int i = 0; i < this->occupations.size(); i++) {
+        delete this->occupations[i];
+    }
+}
+
 short int lsim::mainCharacter::getHealth() {
     return this->health;
 }
@@ -76,7 +82,7 @@ void lsim::mainCharacter::goToMenu() {
 short int lsim::mainCharacter::ageAYear() {
     this->age++;
     if (this->age == 5) {
-        this->occupations.push_back(&lsim::School(this, 2, 0));
+        this->occupations.push_back(new lsim::School(this, 2, 0));
         this->occupationsMenu.add(this->occupations[0]->getName());
     }
     for (int i = 0; i < this->occupations.size(); i++) {

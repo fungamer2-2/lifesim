@@ -27,7 +27,7 @@ void lsim::Occupation::goToMenu() {
 	int choice = this->menu.awaitUserInput();
 	switch (choice) {
 		case 1:
-			std::cout << "Efforts : " << this->efforts;
+			std::cout << "Efforts : " << this->efforts << std::endl;
 			break;
 		case 2:
 			std::cout << "Working harder! Efforts are now " << this->putEfforts(true) << "." << std::endl;

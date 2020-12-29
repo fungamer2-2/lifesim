@@ -9,6 +9,7 @@ namespace lsim {
 	class Occupation {
 		public:
 			Occupation(lsim::mainCharacter *nSelf, int occupationType = lsim::OCCUPATIONNULL);
+			virtual ~Occupation() = default;
 			int putEfforts(bool efforts = true);
 			int getType();
 			std::string getName();
