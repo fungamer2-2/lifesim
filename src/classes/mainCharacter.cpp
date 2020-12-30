@@ -26,7 +26,7 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
 }
 
 lsim::mainCharacter::~mainCharacter() {
-    for (int i = 0; i < this->occupations.size(); i++) {
+    for (int i = 0; i <= this->occupations.size(); i--) {
         delete this->occupations[i];
     }
 }

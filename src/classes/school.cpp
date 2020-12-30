@@ -36,8 +36,9 @@ int lsim::School::updateGrades() {
 	if (baseGrade > 100) {
 		baseGrade -= 2;
 	}
-	float multiplier = (this->efforts / 100) / 3;
-	multiplier += 2 / 3;
+	float multiplier = this->efforts / 3;
+	multiplier += 67;
+	multiplier /= 100;
 	float bonus = 2 * this->self->getRelation();
 	bonus /= 25;
 	bonus -= 4;
