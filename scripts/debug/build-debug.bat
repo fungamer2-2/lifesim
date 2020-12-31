@@ -13,7 +13,7 @@ g++ -Wall -c -g -o occupation.o src/classes/occupation.cpp
 g++ -Wall -c -g -o instring.o src/io/instring.cpp
 g++ -Wall -c -g -o inint.o src/io/inint.cpp
 g++ -Wall -c -g -o menu.o src/io/menu.cpp
-g++ -Wall -c -g -o getTXT.o src/io/getTXT.o
+g++ -Wall -c -g -o getTXT.o src/io/getTXT.cpp
 
 g++ -Wall -c -g -o game.o src/classes/game.cpp
 g++ -Wall -c -g -o getType.o src/getType.cpp
