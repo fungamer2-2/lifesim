@@ -5,7 +5,9 @@
 #include "occupation.h"
 
 namespace lsim {
+    class School;
     class mainCharacter : public lsim::Person {
+        friend class lsim::School;
         public:
             mainCharacter();
             ~mainCharacter();

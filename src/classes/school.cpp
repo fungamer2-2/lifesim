@@ -46,7 +46,7 @@ int lsim::School::updateGrades() {
 		bonus -= 2;
 	}
 	int tempBonus = this->teacher.getSeverity() / 25;
-	tempBonus += 2;
+	tempBonus -= 2;
 	bonus += tempBonus;
 	bonus += rand() % 4 + 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
@@ -57,7 +57,6 @@ int lsim::School::updateGrades() {
 void lsim::School::goToMenu() {
 	std::cout << this->name << " (" << lsim::occupationType(this->type) << ") :" << std::endl;
 	int choice = this->menu.awaitUserInput();
-	int chance, classmateChoice;
 	switch (choice) {
 		case 1:
 			std::cout << "Efforts : " << this->efforts;
@@ -69,9 +68,17 @@ void lsim::School::goToMenu() {
 			std::cout << "Studying less... Efforts are now" << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 4:
-			if (this->self->getAge() < 16) {
-				chance = rand() % 100;
-				if (chance < 2) {
+			{
+				int chance = rand() % 100;
+				int successChance = (this->self->parents[0].getRelation() + this->self->parents[1].getRelation()) / 2;
+				successChance *= -1;
+				successChance /= 10;
+				successChance += 8;
+				if (this->self->getAge() > 16 and this->self->getAge() < 20) {
+					successChance *= 4;
+					successChance += 48;
+				}
+				if (chance < successChance) {
 					std::cout << "Somehow, your parents let you drop out of school! Now what?" << std::endl;
 				} else {
 					std::cout << "Your parents refuse to let you drop out." << std::endl;
@@ -82,8 +89,10 @@ void lsim::School::goToMenu() {
 			this->teacher.goToMenu();
 			break;
 		case 6:
-			classmateChoice = this->classmatesMenu.awaitUserInput();
-			this->classmates[classmateChoice - 1].goToMenu();
+			{
+				int classmateChoice = this->classmatesMenu.awaitUserInput();
+				this->classmates[classmateChoice - 1].goToMenu();
+			}
 			break;
 		case 7:
 			break;

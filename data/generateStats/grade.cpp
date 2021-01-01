@@ -2,6 +2,7 @@
 #include <limits>
 #include <iostream>
 #include "../../headers/classes/school.h"
+#include "../../headers/classes/mainCharacter.h"
 
 int main() {
 		std::ifstream in("data/generateStats/generateStatResults.txt");
@@ -15,10 +16,10 @@ int main() {
 			in.clear();
 		}
 		in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		lsim::School s;
-		lsim::Person p;
-		p.updateIntelligence(i - p.getIntelligence());
-		result = s.updateGrades(p);
+		lsim::mainCharacter m;
+		lsim::School s(&m);
+		m.updateIntelligence(i - m.getIntelligence());
+		result = s.updateGrades();
 		grades[result] += stats[i];
 	}
 	in.close();

@@ -82,8 +82,9 @@ void lsim::mainCharacter::goToMenu() {
 short int lsim::mainCharacter::ageAYear() {
     this->age++;
     if (this->age == 5) {
+        int pos = this->occupations.size();
         this->occupations.push_back(new lsim::School(this, 2, 0));
-        this->occupationsMenu.add(this->occupations[0]->getName());
+        this->occupationsMenu.add(this->occupations[pos]->getName());
     }
     for (int i = 0; i < this->occupations.size(); i++) {
         this->occupations[i]->passAYear();

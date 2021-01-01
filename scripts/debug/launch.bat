@@ -1,5 +1,5 @@
 @echo off
 
-.\scripts\debug\build-debug.bat
-.\bin\a.exe
-del *.o
+call .\scripts\debug\build-debug.bat
+call .\bin\a.exe
+call del *.o
