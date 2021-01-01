@@ -11,11 +11,11 @@ lsim::Occupation::Occupation(lsim::mainCharacter *nSelf, int occupationType) {
 	this->menu.add("Exit");
 }
 
-int lsim::Occupation::putEfforts(bool p_efforts) {
-	if (p_efforts) {
-		float distance = 100 - this->efforts;
-		distance /= 1.5;
-		this->efforts = 100 - distance;
+int lsim::Occupation::putEfforts(bool nEfforts) {
+	if (nEfforts) {
+		this->efforts *= 2;
+		this->efforts /= 3;
+		this->efforts += 33;
 	} else {
 		this->efforts /= 1.5;
 	}

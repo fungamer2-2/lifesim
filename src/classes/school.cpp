@@ -48,7 +48,7 @@ int lsim::School::updateGrades() {
 	int tempBonus = this->teacher.getSeverity() / 25;
 	tempBonus -= 2;
 	bonus += tempBonus;
-	bonus += rand() % 4 + 2;
+	bonus += rand() % 4 - 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
 	return this->avgGrades;
@@ -62,10 +62,10 @@ void lsim::School::goToMenu() {
 			std::cout << "Efforts : " << this->efforts;
 			break;
 		case 2:
-			std::cout << "Studying harder! Efforts are now" << this->putEfforts(true) << "." << std::endl;
+			std::cout << "Studying harder! Efforts are now " << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 3:
-			std::cout << "Studying less... Efforts are now" << this->putEfforts(true) << "." << std::endl;
+			std::cout << "Studying less... Efforts are now " << this->putEfforts(true) << "." << std::endl;
 			break;
 		case 4:
 			{

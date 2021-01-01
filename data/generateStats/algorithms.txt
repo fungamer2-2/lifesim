@@ -4,11 +4,15 @@ Program inputs are inputs taken from already existing variables at call time (fo
 intelligence, relationship quality with parents, teacher severity), whereas arguments are inputs given
 at call time (for example, general multiplier or bonus)
 
+Though the equations in this document are simplified and are not calculated the same way in code, the given
+results are exactly the same.
+
 
 1. generateStat
 	Used to generate base statistics for a Person
 	Program inputs : none
 	Arguments : multiplier (float), bonus (int)
+	Randomness : present
 	
 	The equation is as follows :
 	(rand(0, 100) + rand(40, 110)a / 2 + b
@@ -27,6 +31,7 @@ at call time (for example, general multiplier or bonus)
 	Used to generate school grades
 	Program inputs : student's intelligence and relation (happiness) stats (both range [0, 100]), teacher's
 	severity stat (range [0, 100]), student's effort stats (range [0, 100])
+	Randomness : present
 
 	The equation is as follows :
 	(0.6a + 44)(c/300 + 2/3) + 0.08b + 0.04d - rand(4, 8)
@@ -41,9 +46,12 @@ at call time (for example, general multiplier or bonus)
 	Declaration : headers/classes/school.h
 	Definition : src/classes/school.cpp (int lsim::School::updateGrades)
 
+
 3. Drop out chance
 	Used to calculate the chance of successfully dropping out if the character is less than 20 years old.
 	Program inputs : character age, both parents' relation stat (range [0, 100])
+	Arguments : none
+	Randomness : none
 
 	The equation is as follows if the character is 16 years old or less (in percentage of success):
 	-0.05(a + b) + 8
@@ -52,8 +60,7 @@ at call time (for example, general multiplier or bonus)
 	where a and b are the first and second parent's relation stat, respectively.
 	Special cases : none
 
-	Samples (character is less than 16 years old) :
-
+	Samples (character is 16 years old or less) :
 	Average parent relation ((a + b) / 2) :	0		25		50		75		100
 					Percentage of success :	8		5.5		3		0.5		-2
 	
@@ -63,3 +70,41 @@ at call time (for example, general multiplier or bonus)
 
 	Declaration : headers/classes/school.h
 	Definition : src/classes/school.cpp (void lsim::School::goToMenu)
+
+
+4. Stat inheritence
+	Used to determine a newborn's stats from its parent's stats.
+	Program inputs : all of the newborn's parents' stats
+	Arguments : none
+	Randomness : present
+
+	The equation is as follows for all stats :
+	ax - b(1 - x)
+	where a and b are the first and second parent's intelligence stats, respectively, and x is 0.01rand(0, 100).
+	Special cases : after a stat has been generated, x will change to (1 - x) for the next stat.
+
+	Samples : none (equation based on randomly weighted average)
+
+	Declaration : headers/classes/mainCharacter.h
+	Definition : src/classes/mainCharacter.cpp (lsim::mainCharacter::mainCharacter)
+
+
+5. Effort updating
+	Used to update a person's efforts stat in their occupation
+	Program inputs : efforts (range [0, 100])
+	Arguments : more/less efforts (bool)
+	Randomness : none
+
+	The equation is as follows if more efforts are invested :
+	2x/3 + 100/3
+	Otherwise, the equation is as follows :
+	2x / 3
+	where x is the efforts stat
+	Special cases : none
+
+	Samples :
+	Current efforts :	0		25		50		75		100
+	Updated efforts :	33		50		67		83		100
+
+	Declaration : headers/classes/occupation.h
+	Definition : src/classes/occupation.cpp (int lsim::Occupation::putEfforts)
