@@ -108,3 +108,38 @@ results are exactly the same.
 
 	Declaration : headers/classes/occupation.h
 	Definition : src/classes/occupation.cpp (int lsim::Occupation::putEfforts)
+
+
+6. Parent initial relationship
+	Used to define a parent's relationship stat with his newborn
+	Program inputs : parent relationship stat (range [0, 100])
+	Arguments : none
+
+	The equation is as follows :
+	0.5x + 50
+	where x is the parent's relationship stat
+	Special cases : none
+
+	Samples :
+	Current relationship :	0		25		50		75		100
+	Updated relationship :	50		63		75		88		100
+
+	Declaration : headers/classes/parent.h
+	Definition : src/classes/parent.cpp (lsim::Parent::Parent)
+
+
+
+Default values
+
+1. Parent age at childbirth
+	Female : between 24 and 33
+	Male : between 26 and 35
+
+2. Number of classmates
+	Elementary school : between 22 and 28
+	Middle and high school : between 24 and 30
+	College : between 29 and 35
+
+3. Teacher severity
+	generateStat with a multiplier of 0.85
+	Currently the only call of generateStat with non-default arguments.

@@ -5,17 +5,17 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYe
 	this->currentYear = currentYear;
 	this->avgGrades = 0;
 	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
-	int randomStudents = rand() % 5;
+	int randomStudents = rand() % 6;
 	switch (this->type) {
 		case lsim::SCHOOLELEMENTARY:
 			randomStudents += 22;
 			break;
 		case lsim::SCHOOLMIDDLE:
 		case lsim::SCHOOLHIGH:
-			randomStudents += 24;
+			randomStudents += 25;
 			break;
 		case lsim::SCHOOLCOLLEGE:
-			randomStudents += 28;
+			randomStudents += 29;
 			break;
 	}
 	for (int i = 0; i < randomStudents; i++) {
