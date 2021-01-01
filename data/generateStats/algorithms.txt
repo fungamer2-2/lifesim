@@ -1,0 +1,65 @@
+List of mathematical equations used in LifeSim
+
+Program inputs are inputs taken from already existing variables at call time (for example, student
+intelligence, relationship quality with parents, teacher severity), whereas arguments are inputs given
+at call time (for example, general multiplier or bonus)
+
+
+1. generateStat
+	Used to generate base statistics for a Person
+	Program inputs : none
+	Arguments : multiplier (float), bonus (int)
+	
+	The equation is as follows :
+	(rand(0, 100) + rand(40, 110)a / 2 + b
+	where a is the multiplier and b is the bonus.
+	Special cases : returns 0 if {result < 0}, returns 100 if {result > 100}
+
+	Samples are located in data/generateStats/generateStatResults.txt and can be generated with
+	data/generateStats/generateStats.cpp. Results can be graphed with data/generateStats/viewStats.py,
+	and the whole process can be automated by executing the scripts/debug/generate-stats.bat batch script.
+
+	Declaration : headers/generateStat.h
+	Definition : src/generateStat.cpp (int lsim::generateStat)
+
+
+2. Grade generation algorithm
+	Used to generate school grades
+	Program inputs : student's intelligence and relation (happiness) stats (both range [0, 100]), teacher's
+	severity stat (range [0, 100]), student's effort stats (range [0, 100])
+
+	The equation is as follows :
+	(0.6a + 44)(c/300 + 2/3) + 0.08b + 0.04d - rand(4, 8)
+	where a is the student's intelligence stat, b is the student's relation stat (happiness), c is the
+	teacher's severity stat and d is the student's effort stats.
+	Special cases : (0.6a + 44) becomes (0.6a + 42) if {0.6a + 44 > 100}
+	
+	Samples are located in data/generateStats/gradeResults.txt and can be generated with
+	data/generateStats/grade.cpp. Results can be graphed with data/generateStats/viewStats.py, and the whole
+	process can be automated by executing the scripts/debug/generate-stats.bat batch script.
+
+	Declaration : headers/classes/school.h
+	Definition : src/classes/school.cpp (int lsim::School::updateGrades)
+
+3. Drop out chance
+	Used to calculate the chance of successfully dropping out if the character is less than 20 years old.
+	Program inputs : character age, both parents' relation stat (range [0, 100])
+
+	The equation is as follows if the character is 16 years old or less (in percentage of success):
+	-0.05(a + b) + 8
+	Otherwise, if the character is less than 20 years old (in percentage of success) :
+	-0.2(a + b) + 80
+	where a and b are the first and second parent's relation stat, respectively.
+	Special cases : none
+
+	Samples (character is less than 16 years old) :
+
+	Average parent relation ((a + b) / 2) :	0		25		50		75		100
+					Percentage of success :	8		5.5		3		0.5		-2
+	
+	Samples (character is between 17 and 20 years old) :
+	Average parent relation ((a + b) / 2) :	0		25		50		75		100
+					Percentage of success :	80		70		60		50		40
+
+	Declaration : headers/classes/school.h
+	Definition : src/classes/school.cpp (void lsim::School::goToMenu)
