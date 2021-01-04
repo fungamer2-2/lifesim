@@ -16,6 +16,7 @@ namespace lsim {
             void goToMenu();
             short int ageAYear();
         private:
+            void removeOccupation(int index);
             short int health;
             lsim::Parent parents[2];
             lsim::io::Menu relationshipsMenu;

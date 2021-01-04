@@ -92,3 +92,17 @@ short int lsim::mainCharacter::ageAYear() {
     }
     return this->age;
 }
+
+void lsim::mainCharacter::removeOccupation(int index) {
+    this->occupationsMenu.remove(this->occupations[index]->getName());
+    delete this->occupations[index];
+    this->occupations.erase(this->occupations.begin() + index);
+    try {
+        for (int i = index; i < this->occupations.size(); i++) {
+            this->occupations[i]->shift();
+        }
+    } catch (std::exception &e) {
+        std::cerr << "Error caught : " << e.what() << std::endl;
+        std::cerr << "Cannot remove occupation." << std::endl;
+    }
+}

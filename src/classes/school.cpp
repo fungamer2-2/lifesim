@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../../headers/main.h"
 
-lsim::School::School(lsim::mainCharacter *nSelf, int nSchoolType, int nCurrentYear) : lsim::Occupation(nSelf, nSchoolType) {
+lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, int nCurrentYear) : lsim::Occupation(nSelf, nIndex, nSchoolType) {
 	this->currentYear = currentYear;
 	this->avgGrades = 0;
 	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
@@ -80,6 +80,7 @@ void lsim::School::goToMenu() {
 				}
 				if (chance < successChance) {
 					std::cout << "Somehow, your parents let you drop out of school! Now what?" << std::endl;
+					this->self->removeOccupation(this->index);
 				} else {
 					std::cout << "Your parents refuse to let you drop out." << std::endl;
 				}

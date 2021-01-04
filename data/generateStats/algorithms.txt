@@ -103,8 +103,9 @@ results are exactly the same.
 	Special cases : none
 
 	Samples :
-	Current efforts :	0		25		50		75		100
-	Updated efforts :	33		50		67		83		100
+	Current efforts :			0		25		50		75		100
+	Updated (more) efforts :	33		50		67		83		100
+	Updated (less) efforts :	0		17		33		50		67
 
 	Declaration : headers/classes/occupation.h
 	Definition : src/classes/occupation.cpp (int lsim::Occupation::putEfforts)

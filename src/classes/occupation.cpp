@@ -1,9 +1,11 @@
 #include <iostream>
 #include "../../headers/classes/occupation.h"
 #include "../../headers/getType.h"
+#include "../../headers/classes/exceptions.h"
 
-lsim::Occupation::Occupation(lsim::mainCharacter *nSelf, int occupationType) {
+lsim::Occupation::Occupation(lsim::mainCharacter *nSelf, int nIndex, int occupationType) {
 	this->self = nSelf;
+	this->index = nIndex;
 	this->type = occupationType;
 	this->menu.add("Stats");
 	this->menu.add("Work harder");
@@ -50,4 +52,11 @@ std::string lsim::Occupation::getName() {
 
 void lsim::Occupation::passAYear() {
 	
+}
+
+void lsim::Occupation::shift() {
+	if (this->index == 0) {
+		throw lsim::invalidDeleteException(1);
+	}
+	this->index--;
 }

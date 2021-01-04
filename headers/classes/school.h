@@ -8,7 +8,7 @@
 namespace lsim {
 	class School : public lsim::Occupation {
 		public:
-			School(lsim::mainCharacter *nSelf, int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
+			School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType = lsim::SCHOOLNULL, int nCurrentYear = 0);
 			int updateGrades();
 			void goToMenu();
 			void passAYear();

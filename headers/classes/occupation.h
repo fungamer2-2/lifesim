@@ -8,7 +8,7 @@ namespace lsim {
 	class mainCharacter;
 	class Occupation {
 		public:
-			Occupation(lsim::mainCharacter *nSelf, int occupationType = lsim::OCCUPATIONNULL);
+			Occupation(lsim::mainCharacter *nSelf, int nIndex, int occupationType = lsim::OCCUPATIONNULL);
 			virtual ~Occupation() = default;
 			int putEfforts(bool efforts = true);
 			int getType();
@@ -16,11 +16,14 @@ namespace lsim {
 			virtual void goToMenu();
 			virtual void passAYear();
 		protected:
+			void shift();
 			std::string name;
 			int type;
 			int efforts;
+			int index;
 			lsim::mainCharacter *self;
 			lsim::io::Menu menu;
+		friend class lsim::mainCharacter;
 	}; // class Occupation
 } // namespace lsim
 
