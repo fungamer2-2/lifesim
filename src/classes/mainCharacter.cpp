@@ -90,6 +90,9 @@ short int lsim::mainCharacter::ageAYear() {
     for (int i = 0; i < this->occupations.size(); i++) {
         this->occupations[i]->passAYear();
     }
+    for (int i = 0; i < this->relationships.size(); i++) {
+        this->relationships[i]->ageAYear();
+    }
     return this->age;
 }
 

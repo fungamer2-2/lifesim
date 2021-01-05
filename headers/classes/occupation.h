@@ -10,16 +10,16 @@ namespace lsim {
 		public:
 			Occupation(lsim::mainCharacter *nSelf, int nIndex, int occupationType = lsim::OCCUPATIONNULL);
 			virtual ~Occupation() = default;
-			int putEfforts(bool efforts = true);
-			int getType();
+			short int putEfforts(bool efforts = true);
+			short int getType();
 			std::string getName();
 			virtual void goToMenu();
 			virtual void passAYear();
 		protected:
 			void shift();
 			std::string name;
-			int type;
-			int efforts;
+			short int type;
+			short int efforts;
 			int index;
 			lsim::mainCharacter *self;
 			lsim::io::Menu menu;

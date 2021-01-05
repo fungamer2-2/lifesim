@@ -4,11 +4,12 @@
 #include "lsim.h"
 
 #include "classes/classmate.h"
+#include "classes/exceptions.h"
 #include "classes/game.h"
 #include "classes/mainCharacter.h"
+#include "classes/occupation.h"
 #include "classes/parent.h"
 #include "classes/person.h"
-#include "classes/vehicle.h"
 #include "classes/school.h"
 #include "classes/teacher.h"
 #include "classes/vehicle.h"

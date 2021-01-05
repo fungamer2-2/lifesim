@@ -25,9 +25,9 @@ namespace lsim {
 			short int updateRelation(short int offset);
 			bool getSex();
 			virtual void goToMenu();
-			int getRelationType();
+			short int getRelationType();
 		protected:
-			int relationType;
+			short int relationType;
 			int balance;
 			short int age;
 			short int intelligence;

@@ -19,7 +19,7 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, in
 			break;
 	}
 	for (int i = 0; i < randomStudents; i++) {
-		this->classmates.push_back(lsim::Classmate());
+		this->classmates.push_back(lsim::Classmate(this->self->getAge()));
 		this->classmatesMenu.add(this->classmates[i].getFirstName() + " " + this->classmates[i].getLastName());
 	}
 	this->efforts = rand() % 15 + 55;
@@ -30,7 +30,7 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, in
 	this->menu.add("Exit");
 }
 
-int lsim::School::updateGrades() {
+short int lsim::School::updateGrades() {
 	int baseGrade = 0.6 * this->self->getIntelligence();
 	baseGrade += 44;
 	if (baseGrade > 100) {
@@ -102,4 +102,7 @@ void lsim::School::goToMenu() {
 
 void lsim::School::passAYear() {
 	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << "." << std::endl;
+	for (int i = 0; i < this->classmates.size(); i++) {
+		this->classmates[i].ageAYear();
+	}
 }

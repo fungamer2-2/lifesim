@@ -7,9 +7,9 @@ namespace lsim {
 	class Teacher : public lsim::Person {
 		public:
 			Teacher();
-			int getSeverity();
+			short int getSeverity();
 		private:
-			int severity;
+			short int severity;
 	}; // class Teacher
 } // namespace lsim
 

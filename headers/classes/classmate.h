@@ -6,6 +6,7 @@
 namespace lsim {
 	class Classmate : public lsim::Person {
 		public:
+			Classmate(int nAge);
 		private:
 	}; // class Classmate
 } // namespace lsim

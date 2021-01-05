@@ -9,6 +9,9 @@ namespace lsim {
 	constexpr int RELATIONSELF = 1;
 	constexpr int RELATIONMOTHER = 2;
 	constexpr int RELATIONFATHER = 3;
+	constexpr int RELATIONTEACHER = 4;
+	constexpr int RELATIONCLASSMATE = 5;
+	constexpr int RELATIONFRIEND = 6;
 
 	constexpr int OCCUPATIONNULL = 0;
 	constexpr int SCHOOLNULL = 1;

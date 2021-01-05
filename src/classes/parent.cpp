@@ -1,8 +1,7 @@
 #include "../../headers/main.h"
 
 lsim::Parent::Parent(bool nSex) : Person(nSex) {
-	this->relation /= 2;
-	this->relation += 50;
+	this->relation = lsim::generateStat(1, 0, 2);
 	if (this->sex == lsim::FEMALE) {
 		this->relationType = lsim::RELATIONMOTHER;
 	} else {

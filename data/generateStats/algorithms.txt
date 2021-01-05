@@ -11,12 +11,12 @@ results are exactly the same.
 1. generateStat
 	Used to generate base statistics for a Person
 	Program inputs : none
-	Arguments : multiplier (float), bonus (int)
+	Arguments : multiplier (float), bonus (int), divideDistance (float)
 	Randomness : present
 	
 	The equation is as follows :
-	(rand(0, 100) + rand(40, 110)a / 2 + b
-	where a is the multiplier and b is the bonus.
+	(((rand(0, 100) + rand(40, 110)a / 2 + b) - 100) / c + 100
+	where a is the multiplier, b is the bonus and c is divideDistance.
 	Special cases : returns 0 if {result < 0}, returns 100 if {result > 100}
 
 	Samples are located in data/generateStats/generateStatResults.txt and can be generated with
@@ -68,6 +68,7 @@ results are exactly the same.
 	Average parent relation ((a + b) / 2) :	0		25		50		75		100
 					Percentage of success :	80		70		60		50		40
 
+
 	Declaration : headers/classes/school.h
 	Definition : src/classes/school.cpp (void lsim::School::goToMenu)
 
@@ -111,24 +112,6 @@ results are exactly the same.
 	Definition : src/classes/occupation.cpp (int lsim::Occupation::putEfforts)
 
 
-6. Parent initial relationship
-	Used to define a parent's relationship stat with his newborn
-	Program inputs : parent relationship stat (range [0, 100])
-	Arguments : none
-
-	The equation is as follows :
-	0.5x + 50
-	where x is the parent's relationship stat
-	Special cases : none
-
-	Samples :
-	Current relationship :	0		25		50		75		100
-	Updated relationship :	50		63		75		88		100
-
-	Declaration : headers/classes/parent.h
-	Definition : src/classes/parent.cpp (lsim::Parent::Parent)
-
-
 
 Default values
 
@@ -143,4 +126,9 @@ Default values
 
 3. Teacher severity
 	generateStat with a multiplier of 0.85
-	Currently the only call of generateStat with non-default arguments.
+
+4. School efforts
+	between 55 and 75
+
+5. Teacher intelligence
+	generateStat with a divideDistance of 1.5f
