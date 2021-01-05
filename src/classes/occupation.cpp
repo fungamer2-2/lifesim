@@ -56,7 +56,8 @@ void lsim::Occupation::passAYear() {
 
 void lsim::Occupation::shift() {
 	if (this->index == 0) {
-		throw lsim::invalidDeleteException(1);
+		std::cerr << "Catastrophic failure - Data leak likely to have occured." << std::endl;
+		throw lsim::invalidDeleteException();
 	}
 	this->index--;
 }

@@ -11,7 +11,8 @@ g++ -Wall -c -o getTXT.o src/io/getTXT.cpp
 g++ -Wall -c -o teacher.o src/classes/teacher.cpp
 g++ -Wall -c -o relationType.o src/relationType.cpp
 g++ -Wall -c -o mainGrades.o data/generateStats/grade.cpp
-g++ -Wall -o grades.exe school.o person.o menu.o getTXT.o teacher.o relationType.o generateStat.o mainGrades.o
+g++ -Wall -c -o exceptions.o src/classes/exceptions.cpp
+g++ -Wall -o grades.exe school.o person.o menu.o getTXT.o teacher.o relationType.o generateStat.o mainGrades.o exceptions.o
 .\grades.exe
 
 py -3 data/generateStats/viewStats.py
