@@ -7,6 +7,7 @@ lsim::Occupation::Occupation(lsim::mainCharacter *nSelf, int nIndex, int occupat
 	this->self = nSelf;
 	this->index = nIndex;
 	this->type = occupationType;
+	this->efforts = rand() % 20 + 55;
 	this->menu.add("Stats");
 	this->menu.add("Work harder");
 	this->menu.add("Put less efforts");

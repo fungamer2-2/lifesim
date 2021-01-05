@@ -82,20 +82,27 @@ void lsim::mainCharacter::goToMenu() {
 
 short int lsim::mainCharacter::ageAYear() {
     this->age++;
-    if (this->age == 5) {
-        int pos = this->occupations.size();
-        this->occupations.push_back(new lsim::School(this, pos, 2));
-        this->occupationsMenu.add(this->occupations[pos]->getName());
-    } else if (this->age == 13) {
-        int pos = this->occupations.size();
-        this->occupations.push_back(new lsim::School(this, pos, 3));
-        this->occupationsMenu.add(this->occupations[pos]->getName());
-    }
     for (int i = 0; i < this->occupations.size(); i++) {
         this->occupations[i]->passAYear();
     }
     for (int i = 0; i < this->relationships.size(); i++) {
         this->relationships[i]->ageAYear();
+    }
+    if (this->age == 6) {
+        int pos = this->occupations.size();
+        this->occupations.push_back(new lsim::School(this, pos, 2));
+        this->occupationsMenu.add(this->occupations[pos]->getName());
+        std::cout << "You enter " << this->occupations[pos]->getName() << " at the age of 6." << std::endl;
+    } else if (this->age == 12) {
+        int pos = this->occupations.size();
+        this->occupations.push_back(new lsim::School(this, pos, 3));
+        this->occupationsMenu.add(this->occupations[pos]->getName());
+        std::cout << "You enter " << this->occupations[pos]->getName() << " at the age of 12." << std::endl;
+    } else if (this->age == 15) {
+        int pos = this->occupations.size();
+        this->occupations.push_back(new lsim::School(this, pos, 4));
+        this->occupationsMenu.add(this->occupations[pos]->getName());
+        std::cout << "You enter " << this->occupations[pos]->getName() << " at the age of 15." << std::endl;
     }
     return this->age;
 }

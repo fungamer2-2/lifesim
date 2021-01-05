@@ -2,6 +2,7 @@
 
 g++ -Wall -c -O3 -o main.o src/main.cpp
 
+g++ -Wall -c -O3 -o classmate.o src/classes/classmate.cpp
 g++ -Wall -c -O3 -o vehicle.o src/classes/vehicle.cpp
 g++ -Wall -c -O3 -o person.o src/classes/person.cpp
 g++ -Wall -c -O3 -o mainCharacter.o src/classes/mainCharacter.cpp
@@ -20,6 +21,6 @@ g++ -Wall -c -O3 -o game.o src/classes/game.cpp
 g++ -Wall -c -O3 -o getType.o src/getType.cpp
 g++ -Wall -c -O3 -o generateStat.o src/generateStat.cpp
 
-g++ -Wall -O3 -o main.exe main.o vehicle.o person.o mainCharacter.o parent.o teacher.o school.o occupation.o exceptions.o instring.o inint.o menu.o getTXT.o game.o getType.o generateStat.o
+g++ -Wall -O3 -o main.exe main.o classmate.o vehicle.o person.o mainCharacter.o parent.o teacher.o school.o occupation.o exceptions.o instring.o inint.o menu.o getTXT.o game.o getType.o generateStat.o
 
 move .\main.exe .\bin\lifesim.exe

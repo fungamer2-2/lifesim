@@ -1,5 +1,6 @@
-# IDE
+# IDEs and Editors
 .vscode
+.vs
 
 # Binaries & Applications
 bin

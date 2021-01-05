@@ -34,7 +34,7 @@ results are exactly the same.
 	Randomness : present
 
 	The equation is as follows :
-	(0.6a + 44)(c/300 + 2/3) + 0.08b + 0.04d - rand(4, 8)
+	(0.6a + 44)(c/400 + 3/4) + 0.08b - 0.04d + rand(-2, 2)
 	where a is the student's intelligence stat, b is the student's relation stat (happiness), c is the
 	teacher's severity stat and d is the student's effort stats.
 	Special cases : (0.6a + 44) becomes (0.6a + 42) if {0.6a + 44 > 100}
@@ -127,7 +127,7 @@ Default values
 3. Teacher severity
 	generateStat with a multiplier of 0.85
 
-4. School efforts
+4. Occupation efforts
 	between 55 and 75
 
 5. Teacher intelligence

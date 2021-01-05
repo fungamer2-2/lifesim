@@ -1,7 +1,9 @@
 @echo off
+
 g++ -Wall -c -o generateStat.o src/generateStat.cpp
 g++ -Wall -c -o mainStats.o data/generateStats/generateStats.cpp
 g++ -Wall -o generate-stat.exe generateStat.o mainStats.o
+
 .\generate-stat.exe
 
 g++ -Wall -c -o school.o src/classes/school.cpp

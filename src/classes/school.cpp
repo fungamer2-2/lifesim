@@ -2,7 +2,7 @@
 #include "../../headers/main.h"
 
 lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, int nCurrentYear) : lsim::Occupation(nSelf, nIndex, nSchoolType) {
-	this->currentYear = currentYear;
+	this->currentYear = nCurrentYear;
 	this->updateGrades();
 	int randomStudents = rand() % 6;
 	switch (this->type) {
@@ -26,7 +26,6 @@ lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, in
 		this->classmates.push_back(lsim::Classmate(this->self->getAge()));
 		this->classmatesMenu.add(this->classmates[i].getFirstName() + " " + this->classmates[i].getLastName());
 	}
-	this->efforts = rand() % 15 + 55;
 	this->menu.remove("Exit");
 	this->menu.add("Drop out");
 	this->menu.add("Teacher");
@@ -40,18 +39,24 @@ short int lsim::School::updateGrades() {
 	if (baseGrade > 100) {
 		baseGrade -= 2;
 	}
-	float multiplier = this->efforts / 3;
-	multiplier += 67;
+	std::cout << "TESTTESTTEST" << std::endl << "Intelligence : " << this->self->getIntelligence() << std::endl;
+	std::cout << "baseGrade : " << baseGrade << std::endl;
+	float multiplier = this->efforts / 4 + 75;
 	multiplier /= 100;
-	float bonus = 2 * this->self->getRelation();
+	std::cout << "efforts : " << this->efforts << std::endl;
+	std::cout << "multiplier : " << multiplier << std::endl;
+	std::cout << "happiness : " << this->self->getRelation() << std::endl;
+	int bonus = 2 * this->self->getRelation();
 	bonus /= 25;
-	bonus -= 4;
+	std::cout << "bonus : " << bonus << std::endl;
 	if (bonus < 0) {
 		bonus -= 2;
 	}
+	std::cout << "bonus : " << bonus << std::endl;
 	int tempBonus = this->teacher.getSeverity() / 25;
-	tempBonus -= 2;
-	bonus += tempBonus;
+	std::cout << "severity : " << this->teacher.getSeverity() << std::endl;
+	std::cout << "sBonus : " << tempBonus << std::endl;
+	bonus -= tempBonus;
 	bonus += rand() % 4 - 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
@@ -112,7 +117,7 @@ void lsim::School::passAYear() {
 	for (int i = 0; i < this->classmates.size(); i++) {
 		this->classmates[i].ageAYear();
 	}
-	if (this->self->getAge() == 13) {
+	if (this->self->getAge() == 12 or this->self->getAge() == 15) {
 		this->self->removeOccupation(this->index);
 	}
 }
