@@ -10,6 +10,12 @@ std::string lsim::relationType(int relationType) {
 			return "Mother";
 		case 3:
 			return "Father";
+		case 4:
+			return "Teacher";
+		case 5:
+			return "Classsmate";
+		case 6:
+			return "Friend";
 	}
 	return "NULLRELATION";
 }

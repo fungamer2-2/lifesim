@@ -1,14 +1,67 @@
+Mountain Oak School
+Sunset School
+Greenville School
+Grandview Charter School
+Littlerock Charter School
+Green Valley School
+Waterford School
+Seacoast School
+Mountainridge Charter School
+Mountain Oak School
+Clearwater School
+Holy Oaks School
+Rutherford School
+Bear River Institute
+Deer Valley School
+Oakleaf School
 Greenlands Elementary
 Ravenwood Elementary
 Martin Luther King Elementary
-Sunset School
-Mountainridge Charter School
-Greenville School
 Waterfall Elementary
-Grandview Charter School
 Northride Elementary
 Copper Cove Elementary
-Littlerock Charter School
 Summerfield Elementary
-Waterford School
 Upper Lake Elementary
+Seacoast Elementary
+River Valley Elementary
+Summit Elementary
+Westview Elementary
+Oscar Peterson Elementary
+Somerset Elementary
+Pleasant Valley Elementary
+Seaside Elementary
+Winters Middle School
+Granite Bay Middle School
+Faraday Middle School
+Sunshine Middle School
+Harbor View Middle School
+Ravenwood Middle School
+Savanna Middle School
+Vista Middle Schools
+Grandview Middle School
+Desert Sands Middle School
+Tranquillity Secondary School
+Oak Park Secondary School
+Sacred Heart Secondary School
+Pine Hill Middle School
+Lakeside Middle School
+Springfield Academy
+Heritage High School
+Angelwood High
+Granite Bay High School
+Little Valley High School
+Ridgeview High School
+Pine Hill High
+River Valley High
+Panorama High School
+Evergreen Academy
+Oakleaf Academy
+White Mountain Academy
+West Shores Academy
+Big Valley High
+Liberty Institute
+Riverbank Institute
+Oak Grove High
+Monarch University
+Redwood University
+Golden Valley University

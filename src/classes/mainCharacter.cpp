@@ -84,7 +84,11 @@ short int lsim::mainCharacter::ageAYear() {
     this->age++;
     if (this->age == 5) {
         int pos = this->occupations.size();
-        this->occupations.push_back(new lsim::School(this, pos, 2, 0));
+        this->occupations.push_back(new lsim::School(this, pos, 2));
+        this->occupationsMenu.add(this->occupations[pos]->getName());
+    } else if (this->age == 13) {
+        int pos = this->occupations.size();
+        this->occupations.push_back(new lsim::School(this, pos, 3));
         this->occupationsMenu.add(this->occupations[pos]->getName());
     }
     for (int i = 0; i < this->occupations.size(); i++) {

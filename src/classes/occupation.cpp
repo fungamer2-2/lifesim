@@ -13,7 +13,7 @@ lsim::Occupation::Occupation(lsim::mainCharacter *nSelf, int nIndex, int occupat
 	this->menu.add("Exit");
 }
 
-int lsim::Occupation::putEfforts(bool nEfforts) {
+short int lsim::Occupation::putEfforts(bool nEfforts) {
 	if (nEfforts) {
 		this->efforts *= 2;
 		this->efforts /= 3;
@@ -42,7 +42,7 @@ void lsim::Occupation::goToMenu() {
 	}
 }
 
-int lsim::Occupation::getType() {
+short int lsim::Occupation::getType() {
 	return this->type;
 }
 

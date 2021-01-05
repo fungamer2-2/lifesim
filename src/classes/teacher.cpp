@@ -8,6 +8,6 @@ lsim::Teacher::Teacher() {
 	this->age = rand() % 25 + 25;
 }
 
-int lsim::Teacher::getSeverity() {
+short int lsim::Teacher::getSeverity() {
 	return this->severity;
 }

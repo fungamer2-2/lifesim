@@ -92,6 +92,6 @@ void lsim::Person::goToMenu() {
 	}
 }
 
-int lsim::Person::getRelationType() {
+short int lsim::Person::getRelationType() {
 	return this->relationType;
 }

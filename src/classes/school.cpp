@@ -3,16 +3,20 @@
 
 lsim::School::School(lsim::mainCharacter *nSelf, int nIndex, int nSchoolType, int nCurrentYear) : lsim::Occupation(nSelf, nIndex, nSchoolType) {
 	this->currentYear = currentYear;
-	this->avgGrades = 0;
-	this->name = lsim::io::getTXT("data/txts/schools.txt", lsim::ANY);
+	this->updateGrades();
 	int randomStudents = rand() % 6;
 	switch (this->type) {
 		case lsim::SCHOOLELEMENTARY:
 			randomStudents += 22;
+			this->name = lsim::io::getTXT("data/txts/schools.txt", rand() % 32);
 			break;
 		case lsim::SCHOOLMIDDLE:
+			randomStudents += 25;
+			this->name = lsim::io::getTXT("data/txts/schools.txt", rand() % 2 == 0 ? rand() % 16 : rand() % 16 + 32);
+			break;
 		case lsim::SCHOOLHIGH:
 			randomStudents += 25;
+			this->name = lsim::io::getTXT("data/txts/schools.txt", rand() % 2 == 0 ? rand() % 16 : rand() % 16 + 48);
 			break;
 		case lsim::SCHOOLCOLLEGE:
 			randomStudents += 29;
@@ -59,7 +63,9 @@ void lsim::School::goToMenu() {
 	int choice = this->menu.awaitUserInput();
 	switch (choice) {
 		case 1:
-			std::cout << "Efforts : " << this->efforts;
+			std::cout << "Efforts : " << this->efforts << std::endl;
+			std::cout << "Current year : " << this->currentYear << std::endl;
+			std::cout << "Average grades : " << this->avgGrades << std::endl;
 			break;
 		case 2:
 			std::cout << "Studying harder! Efforts are now " << this->putEfforts(true) << "." << std::endl;
@@ -101,8 +107,12 @@ void lsim::School::goToMenu() {
 }
 
 void lsim::School::passAYear() {
+	this->currentYear++;
 	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << "." << std::endl;
 	for (int i = 0; i < this->classmates.size(); i++) {
 		this->classmates[i].ageAYear();
+	}
+	if (this->self->getAge() == 13) {
+		this->self->removeOccupation(this->index);
 	}
 }
