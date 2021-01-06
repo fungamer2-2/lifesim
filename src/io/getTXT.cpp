@@ -3,8 +3,15 @@
 #include "../../headers/classes/exceptions.h"
 
 std::string lsim::io::getTXT(const char * path, int pos) {
-	std::ifstream in(path);
 	std::string out;
+	std::ifstream in(path);
+	if (!in.is_open()) {
+		in.close();
+		throw lsim::fileError(1);
+	} else if (in.fail()) {
+		in.close();
+		throw lsim::fileError(2);
+	}
 
 	int numLines = 0;
 	while (std::getline(in, out)) {
