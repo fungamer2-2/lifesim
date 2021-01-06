@@ -2,10 +2,9 @@
 #define MAINCHARACTER_H
 
 #include "parent.h"
-#include "occupation.h"
+#include "school.h"
 
 namespace lsim {
-    class School;
     class mainCharacter : public lsim::Person {
         friend class lsim::School;
         public:

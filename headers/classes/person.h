@@ -2,7 +2,6 @@
 #define PERSON_H
 
 #include <random>
-#include <string>
 
 #include "../io/menu.h"
 #include "../generateStat.h"

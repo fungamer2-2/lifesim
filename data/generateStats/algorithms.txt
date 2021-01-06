@@ -30,14 +30,14 @@ results are exactly the same.
 2. Grade generation algorithm
 	Used to generate school grades
 	Program inputs : student's intelligence and relation (happiness) stats (both range [0, 100]), teacher's
-	severity stat (range [0, 100]), student's effort stats (range [0, 100])
+	severity stat (range [0, 100]), student's efforts stat (range [0, 100])
 	Randomness : present
 
 	The equation is as follows :
-	(0.6a + 44)(c/400 + 3/4) + 0.08b - 0.04d + rand(-2, 2)
-	where a is the student's intelligence stat, b is the student's relation stat (happiness), c is the
-	teacher's severity stat and d is the student's effort stats.
-	Special cases : (0.6a + 44) becomes (0.6a + 42) if {0.6a + 44 > 100}
+	(0.6a + 44)(b/400 + 3/4) + 0.08c - 0.04d + rand(-2, 2)
+	where a is the student's intelligence, b is the student's efforts stat, c is the student's happiness stat
+	and d is the teacher's severity stat.
+	Special cases : (0.6a + 44) becomes 100 if {0.6a + 44 > 100}
 	
 	Samples are located in data/generateStats/gradeResults.txt and can be generated with
 	data/generateStats/grade.cpp. Results can be graphed with data/generateStats/viewStats.py, and the whole

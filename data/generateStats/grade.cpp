@@ -17,7 +17,7 @@ int main() {
 		}
 		in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		lsim::mainCharacter m;
-		lsim::School s(&m);
+		lsim::School s(&m, 0);
 		m.updateIntelligence(i - m.getIntelligence());
 		result = s.updateGrades();
 		grades[result] += stats[i];

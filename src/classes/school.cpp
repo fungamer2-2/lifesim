@@ -37,29 +37,25 @@ short int lsim::School::updateGrades() {
 	int baseGrade = 0.6 * this->self->getIntelligence();
 	baseGrade += 44;
 	if (baseGrade > 100) {
-		baseGrade -= 2;
+		baseGrade = 100;
 	}
-	std::cout << "TESTTESTTEST" << std::endl << "Intelligence : " << this->self->getIntelligence() << std::endl;
-	std::cout << "baseGrade : " << baseGrade << std::endl;
 	float multiplier = this->efforts / 4 + 75;
 	multiplier /= 100;
-	std::cout << "efforts : " << this->efforts << std::endl;
-	std::cout << "multiplier : " << multiplier << std::endl;
-	std::cout << "happiness : " << this->self->getRelation() << std::endl;
 	int bonus = 2 * this->self->getRelation();
 	bonus /= 25;
-	std::cout << "bonus : " << bonus << std::endl;
 	if (bonus < 0) {
 		bonus -= 2;
 	}
-	std::cout << "bonus : " << bonus << std::endl;
 	int tempBonus = this->teacher.getSeverity() / 25;
-	std::cout << "severity : " << this->teacher.getSeverity() << std::endl;
-	std::cout << "sBonus : " << tempBonus << std::endl;
 	bonus -= tempBonus;
 	bonus += rand() % 4 - 2;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
 	this->avgGrades = (baseGrade * multiplier) + bonus;
+	if (this->avgGrades > 100) {
+		this->avgGrades = 100;
+	} else if (this->avgGrades < 30) {
+		this->avgGrades = 30;
+	}
 	return this->avgGrades;
 }
 
@@ -88,6 +84,8 @@ void lsim::School::goToMenu() {
 				if (this->self->getAge() > 16 and this->self->getAge() < 20) {
 					successChance *= 4;
 					successChance += 48;
+				} else if (this->self->getAge() > 20) {
+					successChance = 99;
 				}
 				if (chance < successChance) {
 					std::cout << "Somehow, your parents let you drop out of school! Now what?" << std::endl;

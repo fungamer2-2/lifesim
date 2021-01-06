@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include <vector>
+#include <string>
 
 namespace lsim {
 	namespace io {

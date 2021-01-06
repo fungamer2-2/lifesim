@@ -24,3 +24,4 @@ g++ -Wall -c -O3 -o generateStat.o src/generateStat.cpp
 g++ -Wall -O3 -o main.exe main.o classmate.o vehicle.o person.o mainCharacter.o parent.o teacher.o school.o occupation.o exceptions.o instring.o inint.o menu.o getTXT.o game.o getType.o generateStat.o
 
 move .\main.exe .\bin\lifesim.exe
+del *.o
