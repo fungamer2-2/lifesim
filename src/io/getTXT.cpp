@@ -1,6 +1,6 @@
 #include <fstream>
-
 #include "../../headers/io/getTXT.h"
+#include "../../headers/classes/exceptions.h"
 
 std::string lsim::io::getTXT(const char * path, int pos) {
 	std::ifstream in(path);
@@ -15,7 +15,7 @@ std::string lsim::io::getTXT(const char * path, int pos) {
 	if (pos == -1) {
 		pos = rand() % numLines;
 	} else if (pos < -1 or pos > numLines) {
-		return NULL;
+		throw lsim::invalidIndexException();
 	}
 	for (int i = 0; i < pos; i++) {
 		std::getline(in, out);
