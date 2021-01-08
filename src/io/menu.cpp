@@ -2,6 +2,7 @@
 #include <limits>
 
 #include "../../headers/io/menu.h"
+#include "../../headers/classes/exceptions.h"
 
 lsim::io::Menu::Menu(std::vector<std::string> choices) {
 	this->choices = choices;
@@ -34,8 +35,18 @@ int lsim::io::Menu::awaitUserInput() {
 	}
 }
 
-void lsim::io::Menu::add(std::string nChoice) {
-	this->choices.push_back(nChoice);
+void lsim::io::Menu::add(std::string nChoice, int index = lsim::LAST) {
+	if (index < 0) {
+		if (index < -1 * this->choices.size() - 1) {
+			throw lsim::invalidIndexException(2);
+		}
+		this->choices.insert(this->choices.end() + index + 1, nChoice);
+	} else {
+		if (index > this->choices.size()) {
+			throw lsim::invalidIndexException(1);
+		}
+		this->choices.insert(this->choices.begin() + index, nChoice);
+	}
 }
 
 bool lsim::io::Menu::remove(std::string choice) {
