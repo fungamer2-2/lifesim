@@ -1,5 +1,9 @@
 import matplotlib.pyplot
 
+# uses matplotlib.pyplot to visualize the generateStat and the grade
+# generation algorithms. Must run ./generateStats.cpp and ./grade.cpp
+# beforehand to generate results.
+
 x, y = [], []
 
 for line in open('data/generateStats/generateStatResults.txt', 'r'):
