@@ -35,7 +35,7 @@ int lsim::io::Menu::awaitUserInput() {
 	}
 }
 
-void lsim::io::Menu::add(std::string nChoice, int index = lsim::LAST) {
+void lsim::io::Menu::add(std::string nChoice, int index) {
 	if (index < 0) {
 		if (index < -1 * this->choices.size() - 1) {
 			throw lsim::invalidIndexException(2);
