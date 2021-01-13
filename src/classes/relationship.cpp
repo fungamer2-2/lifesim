@@ -3,3 +3,7 @@
 lsim::Relationship::Relationship(lsim::Person *nSelf) {
 	this->self = nSelf;
 }
+
+lsim::Relationship::~Relationship() {
+	delete this->self;
+}

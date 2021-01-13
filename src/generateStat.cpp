@@ -2,8 +2,9 @@
 
 #include "../headers/generateStat.h"
 
+// returns average of two random numbers to achieve a distribution somewhat centralized around 60-70
+
 short int lsim::generateStat(float multiplier, short int bonus, float divideDistance) {
-	// returns average of two random numbers to achieve a distribution somewhat centralized around 60-70
 	short int x = rand() % 70 + 40;
 	short int y = rand() % 100;
 	short int result = (x + y) / 2 * multiplier;
