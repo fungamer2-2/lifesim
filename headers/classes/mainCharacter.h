@@ -1,8 +1,9 @@
 #ifndef MAINCHARACTER_H
 #define MAINCHARACTER_H
 
-#include "parent.h"
-#include "school.h"
+#include "./relationship.h"
+#include "./parent.h"
+#include "./school.h"
 
 namespace lsim {
     class mainCharacter : public lsim::Person {
@@ -20,7 +21,7 @@ namespace lsim {
             lsim::Parent parents[2];
             lsim::io::Menu relationshipsMenu;
             lsim::io::Menu occupationsMenu;
-            std::vector<Person *> relationships;
+            std::vector<lsim::Relationship *> relationships;
             std::vector<lsim::Occupation *> occupations;
     }; // class mainCharacter
 } // namespace lsim

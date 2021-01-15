@@ -1,9 +1,17 @@
 #include "../../headers/classes/relationship.h"
 
-lsim::Relationship::Relationship(lsim::Person *nSelf) {
+lsim::Relationship::Relationship(lsim::Person *nSelf, short int nType) {
 	this->self = nSelf;
+	this->relationType = nType;
 }
 
-lsim::Relationship::~Relationship() {
-	delete this->self;
+void lsim::Relationship::goToMenu() {
+	int choice = this->menu.awaitUserInput();
+	switch (choice) {
+
+	}
+}
+
+short int lsim::Relationship::ageAYear() {
+	
 }

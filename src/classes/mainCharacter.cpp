@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "../../headers/main.h"
 
 lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim::Parent(lsim::MALE)}) {
@@ -14,8 +15,8 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
     firstParentWeight *= -1;
     this->charisma = (this->parents[0].getCharisma() * firstParentWeight / 100) + (this->parents[1].getCharisma() * (100 - firstParentWeight) / 100);
     this->relationType = lsim::RELATIONSELF;
-    this->relationships.push_back(&this->parents[0]);
-    this->relationships.push_back(&this->parents[1]);
+    this->relationships.push_back(new lsim::Parentship(&this->parents[0]));
+    this->relationships.push_back(new lsim::Parentship(&this->parents[1]));
     this->relationshipsMenu.add(this->parents[0].getFirstName() + " " + this->parents[0].getLastName() + " (" + lsim::relationType(this->parents[0].getRelationType()) + ")");
     this->relationshipsMenu.add(this->parents[1].getFirstName() + " " + this->parents[1].getLastName() + " (" + lsim::relationType(this->parents[1].getRelationType()) + ")");
     this->menu.remove("Exit");
@@ -27,9 +28,14 @@ lsim::mainCharacter::mainCharacter() : parents({lsim::Parent(lsim::FEMALE), lsim
 }
 
 lsim::mainCharacter::~mainCharacter() {
-    for (int i = 0; i <= this->occupations.size(); i--) {
+    for (int i = this->occupations.size() - 1; i <= 0; i--) {
         delete this->occupations[i];
     }
+    this->occupations.clear();
+    for (int i = this->relationships.size() - 1; i >= 0; i--) {
+        delete this->relationships[i];
+    }
+    this->occupations.clear();
 }
 
 short int lsim::mainCharacter::getHealth() {
