@@ -112,6 +112,7 @@ void lsim::School::goToMenu() {
 void lsim::School::passAYear() {
 	this->currentYear++;
 	std::cout << "You finish this year at " << this->name << " with an average of " << this->updateGrades() << "." << std::endl;
+	this->teacher.ageAYear();
 	for (int i = 0; i < this->classmates.size(); i++) {
 		this->classmates[i].ageAYear();
 	}
