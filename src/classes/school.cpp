@@ -119,4 +119,5 @@ void lsim::School::passAYear() {
 	if (this->self->getAge() == 12 or this->self->getAge() == 15) {
 		this->self->removeOccupation(this->index);
 	}
+	this->efforts += rand() % 5 - 2;
 }
