@@ -84,7 +84,7 @@ void lsim::School::goToMenu() {
 				if (this->self->getAge() > 16 and this->self->getAge() < 20) {
 					successChance *= 4;
 					successChance += 48;
-				} else if (this->self->getAge() > 20) {
+				} else if (this->self->getAge() >= 20) {
 					successChance = 99;
 				}
 				if (chance < successChance) {
