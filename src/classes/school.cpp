@@ -116,7 +116,7 @@ void lsim::School::passAYear() {
 	for (int i = 0; i < this->classmates.size(); i++) {
 		this->classmates[i].ageAYear();
 	}
-	if (this->self->getAge() == 12 or this->self->getAge() == 15) {
+	if (this->self->getAge() == 12 or this->self->getAge() == 15 or this->self->getAge() == 18) {
 		this->self->removeOccupation(this->index);
 	}
 	this->efforts += rand() % 5 - 2;
