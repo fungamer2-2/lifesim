@@ -109,6 +109,8 @@ short int lsim::mainCharacter::ageAYear() {
         this->occupations.push_back(new lsim::School(this, pos, 4));
         this->occupationsMenu.add(this->occupations[pos]->getName());
         std::cout << "You enter " << this->occupations[pos]->getName() << " at the age of 15." << std::endl;
+    } else if (this->age == 18) {
+        std::cout << "You graduate from high school at the age of 18" << std::endl;
     }
     return this->age;
 }
